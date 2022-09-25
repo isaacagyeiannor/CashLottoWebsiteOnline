@@ -1,0 +1,52 @@
+{% extends "mainwebsite/base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!-- inner hero section start -->
+<section class="inner-banner bg_img" style="background: url('assets/images/inner-banner/bg2.jpg') top;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        <h2 class="title text-white">About Page</h2>
+        <ul class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>About</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- inner hero section end -->
+
+
+    <!-- About Section Starts Here -->
+    <section class="about-section padding-top padding-bottom overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-header mb-4">
+                            <h2 class="section-header__title">About The Cash Lotto</h2>
+
+                            <p>TheCashLotto is a lottery intermediary service that purchases lottery tickets on behalf of its customers.</p>
+                            <p>TheCashLotto is not affiliated with any lottery commission program or operator in Ghana, either directly or indirectly. We do not sell lottery tickets, and thecashlotto does not receive any commissions from lottery organizations in exchange for its services, nor do we share in the prizes.</p>
+                            <p>When someone stakes one of the NLA games on our website or mobile app, thecashlotto works as an agent, placing the bet on behalf of the client on NLA staking machine and handing over prizes/winnings in accordance. To put it another way, thecashlotto serves as a facilitator between the user and the NLA-licensed lottery operator(s) in Ghana.</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'signin' %}" class="cmn--btn active mt-sm-5 mt-4">Get Started</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="aobut-thumb section-thumb">
+                        <img src="{% static 'mainwebsite/images/about/thumb2.png' %}" alt="about" class="ms-lg-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shapes">
+            <img src="{% static 'mainwebsite/images/about/shape.png' %}" alt="about" class="shape shape1">
+        </div>
+    </section>
+    <!-- About Section Ends Here -->
+
+    {% endblock %}

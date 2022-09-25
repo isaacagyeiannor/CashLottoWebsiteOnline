@@ -1,0 +1,162 @@
+{% extends "mainwebsite/base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <!-- inner hero section start -->
+<section class="inner-banner bg_img" style="background: url('{% static 'mainwebsite/images/inner-banner/bg2.jpg' %}) top;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        <h2 class="title text-white">Blog Details</h2>
+        <ul class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center">
+          <li><a href="index.html">Home</a></li>
+          <li>Blog Details</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- inner hero section end -->
+
+    <!-- Blog Details Section Starts Here -->
+    <section class="blog-details padding-top padding-bottom">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-8">
+                    <div class="blog-details-wrapper">
+                        <div class="details-thumb"><img src="{{blog.image.url}}" alt="blog"></div>
+                        <div class="details-content">
+                            <h3 class="title">{{blog.title}}</h3>
+                            <ul class="meta-post">
+                                <li>
+                                    <a href="#0">
+                                        <i class="las la-clock"></i>
+                                        {{blog.created}}
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="details-inner">
+                                <h6 class="subtitle">Portrait of smiling man sitting in a cafe bar with his laptop computer Free Photo</h6>
+                                <p>{{blog.content}}</p>
+                            </div>
+                            {% comment %} <div class="details-inner">
+                                <h6 class="subtitle">man sitting in a cafe bar with his laptop computer Free Photo</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae dignissimos excepturi dolorem quos aliquam quibusdam quis architecto ea dicta. Assumenda quae officiis aliquam nihil, ad architecto eius impedit ex. Nihil! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ut iste nobis eaque perspiciatis quisquam repellendus. Tesicing elit. Pariatur at sit iure ratione, doloremque reiciendis consequuntur ipsa quam dolorem totam eligendi harum itaque natus vitae facilis ut officia esse praesentium.</p>
+                            </div>
+                            <div class="details-inner">
+                                <h6 class="subtitle">Portrait of smiling man sitting in a cafe bar wi Photo</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae dignissimos excepturi dolorem quos aliquam quibusdam quis architecto ea dicta. Assumenda quae officiis aliquam nihil, ad architecto eius impedit ex. Nihil! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ut iste nobis eaque perspiciatis quisquam repellendus. Tempora placeat deleniti perferendis, a aut nostrum eveniet tenetur ratione assumenda alias maxime sed. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur at sit iure ratione, doloremque reiciendis consequuntur ipsa quam dolorem totam eligendi harum itaque natusvitae facilis ut officia esse praesentium.</p>
+                            </div>
+                            <div class="details-inner">
+                                <h6 class="subtitle">Portrait of smiling man sitting in a cafe bar with his o</h6>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae diicing elit. Pariatur at sit iure ratione, doloremque reiciendis consequuntur ipsa quam dolorem totam eligendi harum itaque natus vitae facilis ut officia esse praesentium.</p>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                    <div class="comment__area">
+                        <h3 class="comment__area-title">02 Comments</h3>
+                        <ul class="comments">
+                            <li class="comment__item">
+                                <div class="comment__header d-flex flex-wrap justify-content-between align-items-center">
+                                    <div class="poster__item d-flex flex-wrap align-items-center">
+                                        <div class="thumb">
+                                            <img src="{% static 'mainwebsite/images/top/item2.png'%}" alt="dashboard">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="name">Tasfiya Jarha</h4>
+                                            <span class="date">15 Aug 2020</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="cmn--btn btn--sm h-auto mt-3 ms-3">REPLY</a>
+                                </div>
+                                <div class="comment__body">
+                                    <p>Earum eius nihil sapiente, ab illo voluptatem assumenda debitis totam libero alias quia inventore nam expedita maiores obcaecati eveniet temporibus provident labore umque esse? Nisi hic laboriosam culpa iusto sint nam numquam sit!</p>
+                                </div>
+                            </li>
+                            <li class="comment__item">
+                                <div class="comment__header d-flex flex-wrap justify-content-between align-items-center">
+                                    <div class="poster__item d-flex flex-wrap align-items-center">
+                                        <div class="thumb">
+                                            <img src="{% static 'mainwebsite/images/top/item1.png'%}" alt="dashboard">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="name">Tasfiya Jarha</h4>
+                                            <span class="date">15 Aug 2020</span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="cmn--btn btn--sm h-auto mt-3 ms-3">REPLY</a>
+                                </div>
+                                <div class="comment__body">
+                                    <p>Earum eius nihil sapiente, ab illo voluptatem assumenda debitis totam libero alias quia inventore nam expedita maiores obcaecati eveniet temporibus provident labore umque esse? Nisi hic laboriosam culpa iusto sint nam numquam sit!</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="write__comment__area mt-5">
+                        <h3 class="write__comment__area-title">Leave a Comment</h3>
+                        <form  class="comment__form form">
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form--control" placeholder="Full Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form--control" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control form--control" placeholder="Write your Comment"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <a href="#" class="cmn--btn active">Post Your Comment</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog-sidebar">
+                        <div class="sidebar__item">
+                            <form class="search__form">
+                                <div class="form-group">
+                                    <input type="text" class="form--control form-control" placeholder="Key Word">
+                                    <button class="btn text-white shadow-none outline-0" type="submit"><i class="las la-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="sidebar-item recent-post-wrapper">
+                            <a href="#0"><h4>Recent Posts</h4></a>
+                            <div class="recent-post-item">
+                                <div class="thumb"><img src="{% static 'mainwebsite/images/blog/item1.png'%}" alt="blog"></div>
+                                <div class="content">
+                                    <h6 class="title hover-line"><a href="blog-details.html">50 Years The Moon Landing. Close Is Space Travel, Really?</a></h6>
+                                    <span class="date"><i class="las la-clock"></i>16 May, 2021</span>
+                                </div>
+                            </div>
+                            <div class="recent-post-item">
+                                <div class="thumb"><img src="{% static 'mainwebsite/images/blog/item3.png'%}" alt="blog"></div>
+                                <div class="content">
+                                    <h6 class="title hover-line"><a href="blog-details.html">50 Years The Moon Landing. Close Is Space Travel, Really?</a></h6>
+                                    <span class="date"><i class="las la-clock"></i>16 May, 2021</span>
+                                </div>
+                            </div>
+                            <div class="recent-post-item">
+                                <div class="thumb"><img src="{% static 'mainwebsite/images/blog/item2.png'%}" alt="blog"></div>
+                                <div class="content">
+                                    <h6 class="title hover-line"><a href="blog-details.html">50 Years The Moon Landing. Close Is Space Travel, Really?</a></h6>
+                                    <span class="date"><i class="las la-clock"></i>16 May, 2021</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Section Ends Here -->
+{% endblock %}

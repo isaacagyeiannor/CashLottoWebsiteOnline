@@ -1,0 +1,75 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block title %}View Testimonial{% endblock title %}
+
+
+{% block content %}
+    <!-- ============================================================== -->
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="main-content">
+
+        <div class="page-content">
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                            <h4 class="mb-sm-0 font-size-18">View Testimonial</h4>
+
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                    <li class="breadcrumb-item active">View-Testimonial</li>
+                                </ol>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-aside">
+                            <a href="#" class="card-aside-column br-tl-7 br-bl-7 cover-image" data-image-src="#"></a>
+                            <div class="card-body d-flex flex-column">
+                                <h4><a href="#">{{detail.title|title}}</a></h4>
+                                <div class="d-flex align-items-center mt-auto">
+                                    <img src="{{detail.image.url}}" class="avatar brround avatar-md mr-3" alt="avatar-img">
+                                    <div>
+                                        <a href="profile.html" class="text-default">{{detail.author}}</a>
+                                        <small class="d-block text-muted">{{detail.created}}</small>
+                                    </div>
+                                </div>
+                                <div class="text-muted">{% lorem 9 p random %}</div>
+                                <div class="text-muted">{{detail.content}}</div>
+                                <div>
+                                    <button type="button" class="btn btn-outline-primary"><i class="fa fa-trash"></i></button>
+                                    <button type="button" class="btn btn-outline-primary"><i class="fa fa-edit"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container-fluid -->
+        </div>
+        <!-- End Page-content -->
+
+        {% block footer %}
+        {% include 'partials/footer.html' %}
+        {% endblock footer %}
+    </div>
+    <!-- end main content-->
+{% endblock content %}
+
+{% block extra_js %}
+    <!-- ckeditor -->
+    <script src="{% static 'libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js'%}"></script>
+
+    <!-- init js -->
+    <script src="{% static 'js/pages/form-editor.init.js'%}"></script>
+{% endblock extra_js %}

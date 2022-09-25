@@ -1,0 +1,477 @@
+{% extends 'partials/base.html' %} {% load static %} {% block title %}users{% endblock title %} {% block content %}
+<!-- ============================================================== -->
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<div class="main-content">
+  <div class="page-content">
+    <div class="container-fluid">
+      <!-- start page title -->
+      <div class="row">
+        <div class="col-12">
+          <div
+            class="page-title-box d-sm-flex align-items-center justify-content-between"
+          >
+            <h4 class="mb-sm-0 font-size-18">All Users</h4>
+
+            <div class="page-title-right">
+              <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item">
+                  <a href="/">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">All-FUsers</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end page title -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <h5 class="card-title">
+                      List <span class="text-muted fw-normal ms-2">(834)</span>
+                    </h5>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div
+                    class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3"
+                  >
+                    <div>
+                      <a class="btn btn-light" data-bs-toggle="modal" href="#addnewuser" role="button" 
+                        ><i class="bx bx-plus me-1"></i> Add New</a
+                      >
+                    </div>
+                    <!-- New user Modal -->
+                    <div class="modal fade" id="addnewuser" tabindex="-1" role="dialog" aria-labelledby="adduserTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title font-size-16" id="adduserTitle">Add New User</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                  <div>
+                                      <div class="mb-3">
+                                          <input type="text" class="form-control" placeholder="Name">
+                                      </div>
+                                      <div class="mb-3">
+                                          <input type="email" class="form-control" placeholder="Email">
+                                      </div>
+                                      <div class="mb-3">
+                                          <input type="tel" class="form-control" placeholder="Phone Number">
+                                      </div>
+                                      <div class="mb-3">
+                                          <input type="file" class="form-control" placeholder="Profile Pic">
+                                      </div>
+                                      <div class="mb-3">
+                                          <input type="number" class="form-control" placeholder="Balance">
+                                      </div>
+                                      <div class="mb-3">
+                                          <input type="password" class="form-control" placeholder="Password">
+                                      </div>
+
+                                  </div>
+                              </div>
+
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Add <i
+                                          class="fa fa-plus ms-1"></i></button>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="dropdown">
+                      <a
+                        class="btn btn-link text-muted py-1 font-size-16 shadow-none dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="bx bx-dots-horizontal-rounded"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end row -->
+
+              <div class="table-responsive mb-4">
+                <div
+                  id="DataTables_Table_0_wrapper"
+                  class="dataTables_wrapper dt-bootstrap4 no-footer"
+                >
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <div
+                        class="dataTables_length"
+                        id="DataTables_Table_0_length"
+                      >
+                        <label
+                          >Show
+                          <select
+                            name="DataTables_Table_0_length"
+                            aria-controls="DataTables_Table_0"
+                            class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm"
+                          >
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                          </select>
+                          entries</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                      <div
+                        id="DataTables_Table_0_filter"
+                        class="dataTables_filter"
+                      >
+                        <label
+                          >Search:<input
+                            type="search"
+                            class="form-control form-control-sm"
+                            placeholder=""
+                            aria-controls="DataTables_Table_0"
+                        /></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <table
+                        class="table align-middle datatable dt-responsive table-check nowrap dataTable no-footer"
+                        style="
+                          border-collapse: collapse;
+                          border-spacing: 0px 8px;
+                          width: 100%;
+                        "
+                        id="DataTables_Table_0"
+                        role="grid"
+                        aria-describedby="DataTables_Table_0_info"
+                      >
+                        <thead>
+                          <tr role="row">
+                            <th
+                              scope="col"
+                              style="width: 50px"
+                              class="sorting sorting_asc"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-sort="ascending"
+                              aria-label="
+                                     
+                                         
+                                         
+                                     
+                                 : activate to sort column descending"
+                            >
+                              <div class="form-check font-size-16">
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                  id="checkAll"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="checkAll"
+                                ></label>
+                              </div>
+                            </th>
+                            <th
+                              scope="col"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Name: activate to sort column ascending"
+                              style="width: 166px"
+                            >
+                              Name
+                            </th>
+                            <th
+                              scope="col"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Position: activate to sort column ascending"
+                              style="width: 172px"
+                            >
+                              Credit
+                            </th>
+                            <th
+                              scope="col"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Email: activate to sort column ascending"
+                            >
+                              Win Balance
+                            </th>
+                            <th
+                              scope="col"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Tags: activate to sort column ascending"
+                            >
+                              Total Draws
+                            </th>
+                            <th
+                              style="width: 80px; min-width: 80px"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Action: activate to sort column ascending"
+                            >
+                              Total Draws Won
+                            </th>
+                            <th
+                              style="width: 80px; min-width: 80px"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Action: activate to sort column ascending"
+                            >
+                              Total Cash Played
+                            </th>
+                            <th
+                              style="width: 80px; min-width: 80px"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Action: activate to sort column ascending"
+                            >
+                              Total Cash Won
+                            </th>
+                            <th
+                              style="width: 80px; min-width: 80px"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Action: activate to sort column ascending"
+                            >
+                              Phone Number
+                            </th>
+                            <th
+                              style="width: 80px; min-width: 80px"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Action: activate to sort column ascending"
+                            >
+                              Total Referals
+                            </th>
+                            <th
+                              style="width: 80px; min-width: 80px"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Action: activate to sort column ascending"
+                            >
+                              Sign Up Date
+                            </th>
+                            <th
+                              style="width: 80px; min-width: 80px"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Action: activate to sort column ascending"
+                            >
+                              Last login
+                            </th>
+                            <th
+                              style="width: 80px; min-width: 80px"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Action: activate to sort column ascending"
+                            >
+                              Status
+                            </th>
+                            <th
+                              style="width: 150px; min-width: 150px"
+                              class="sorting"
+                              tabindex="0"
+                              aria-controls="DataTables_Table_0"
+                              rowspan="1"
+                              colspan="1"
+                              aria-label="Action: activate to sort column ascending"
+                            >
+                              Action
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="odd gradeX" id="remove_25991">
+                            <th scope="row" class="sorting_1">
+                              <div class="form-check font-size-16">
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                  id="contacusercheck10"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="contacusercheck10"
+                                ></label>
+                              </div>
+                            </th>
+                            <td>
+                              <img
+                                src="{% static 'images/users/avatar-4.jpg' %}"
+                                alt=""
+                                class="avatar-sm rounded-circle me-2"
+                              />
+                              <a href="#" class="text-body">Gerald Moyer</a>
+                            </td>
+                            <td class="center">1</td>
+                            <td class="center">400</td>
+                            <td class="center">3</td>
+                            <td class="center">2</td>
+                            <td class="center">1000</td>
+                            <td class="center">200</td>
+                            <td class="center">+234 541 53 3923</td>
+                            <td class="center">3</td>
+                            <td class="center">26-Jul-22</td>
+                            <td class="center">26-Jul-22 03:16 pm</td>
+                            <td class="center">Active</td>
+                            <td class="center">
+                              <a
+                                class="btn btn-tbl-edit btn-xs activate_customer_status btn-success"
+                                id="activate_customer_status25991"
+                              >
+                                <i class="fa fa-pencil-alt"></i>
+                              </a>
+                              <a
+                                class="btn btn-tbl-edit btn-xs deactivate_customer_status btn-danger hidden"
+                                id="deactivate_customer_status25991"
+                              >
+                                <i class="fa fa-trash-alt"></i>
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-5">
+                      <div
+                        class="dataTables_info"
+                        id="DataTables_Table_0_info"
+                        role="status"
+                        aria-live="polite"
+                      >
+                        Showing 1 to 10 of 11 entries
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                      <div
+                        class="dataTables_paginate paging_simple_numbers"
+                        id="DataTables_Table_0_paginate"
+                      >
+                        <ul class="pagination">
+                          <li
+                            class="paginate_button page-item previous disabled"
+                            id="DataTables_Table_0_previous"
+                          >
+                            <a
+                              href="#"
+                              aria-controls="DataTables_Table_0"
+                              data-dt-idx="0"
+                              tabindex="0"
+                              class="page-link"
+                              >Previous</a
+                            >
+                          </li>
+                          <li class="paginate_button page-item active">
+                            <a
+                              href="#"
+                              aria-controls="DataTables_Table_0"
+                              data-dt-idx="1"
+                              tabindex="0"
+                              class="page-link"
+                              >1</a
+                            >
+                          </li>
+                          <li class="paginate_button page-item">
+                            <a
+                              href="#"
+                              aria-controls="DataTables_Table_0"
+                              data-dt-idx="2"
+                              tabindex="0"
+                              class="page-link"
+                              >2</a
+                            >
+                          </li>
+                          <li
+                            class="paginate_button page-item next"
+                            id="DataTables_Table_0_next"
+                          >
+                            <a
+                              href="#"
+                              aria-controls="DataTables_Table_0"
+                              data-dt-idx="3"
+                              tabindex="0"
+                              class="page-link"
+                              >Next</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end table -->
+              </div>
+              <!-- end table responsive -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Page-content -->
+
+  {% block footer %} {% include 'partials/footer.html' %} {% endblock footer %}
+</div>
+<!-- end main content-->
+{% endblock content %} {% block extra_js %}
+<!-- Card Masonry -->
+<script src="{% static 'libs/masonry-layout/dist/masonry.pkgd.min.js'%}"></script>
+{% endblock extra_js %}

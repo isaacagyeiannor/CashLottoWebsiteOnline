@@ -1,0 +1,330 @@
+{% extends 'partials/base.html' %} {% load static %} {% block title %}Number Verification{% endblock title %} {% block content %}
+<!-- ============================================================== -->
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<div class="main-content">
+  <div class="page-content">
+    <div class="container-fluid">
+      <!-- start page title -->
+      <div class="row">
+        <div class="col-12">
+          <div
+            class="page-title-box d-sm-flex align-items-center justify-content-between"
+          >
+            <h4 class="mb-sm-0 font-size-18">Number Verification</h4>
+
+            <div class="page-title-right">
+              <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item">
+                  <a href="/">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Number Verification</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end page title -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <div
+                id="datatable_wrapper"
+                class="dataTables_wrapper dt-bootstrap4 no-footer"
+              >
+                <div class="row">
+                  <div class="col-sm-12 col-md-6">
+                    <div class="dataTables_length" id="datatable_length">
+                      <label
+                        >Show
+                        <select
+                          name="datatable_length"
+                          aria-controls="datatable"
+                          class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm"
+                        >
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                        </select>
+                        entries</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-6">
+                    <div id="datatable_filter" class="dataTables_filter">
+                      <label
+                        >Search:<input
+                          type="search"
+                          class="form-control form-control-sm"
+                          placeholder=""
+                          aria-controls="datatable"
+                      /></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <table
+                      id="datatable"
+                      class="table table-bordered dt-responsive nowrap w-100 dataTable no-footer dtr-inline"
+                      role="grid"
+                      aria-describedby="datatable_info"
+                      style="width: 1156px"
+                    >
+                      <thead>
+                        <tr role="row">
+                          <th
+                            class="sorting sorting_desc"
+                            tabindex="0"
+                            aria-controls="datatable"
+                            rowspan="1"
+                            colspan="1"
+                            style="width: 187px"
+                            aria-label="Name: activate to sort column ascending"
+                            aria-sort="descending"
+                          >
+                            Number
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable"
+                            rowspan="1"
+                            colspan="1"
+                            style="width: 281px"
+                            aria-label="Position: activate to sort column ascending"
+                          >
+                            Mobile
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable"
+                            rowspan="1"
+                            colspan="1"
+                            style="width: 133px"
+                            aria-label="Office: activate to sort column ascending"
+                          >
+                            Code
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable"
+                            rowspan="1"
+                            colspan="1"
+                            style="width: 63px"
+                            aria-label="Age: activate to sort column ascending"
+                          >
+                            Reg Req.
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable"
+                            rowspan="1"
+                            colspan="1"
+                            style="width: 125px"
+                            aria-label="Start date: activate to sort column ascending"
+                          >
+                            Reset Req.
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable"
+                            rowspan="1"
+                            colspan="1"
+                            style="width: 109px"
+                            aria-label="Salary: activate to sort column ascending"
+                          >
+                            Status
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable"
+                            rowspan="1"
+                            colspan="1"
+                            style="width: 125px"
+                            aria-label="Start date: activate to sort column ascending"
+                          >
+                            Country
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable"
+                            rowspan="1"
+                            colspan="1"
+                            style="width: 125px"
+                            aria-label="Start date: activate to sort column ascending"
+                          >
+                            Date First Sent
+                          </th>
+                          <th
+                            class="sorting"
+                            tabindex="0"
+                            aria-controls="datatable"
+                            rowspan="1"
+                            colspan="1"
+                            style="width: 125px"
+                            aria-label="Start date: activate to sort column ascending"
+                          >
+                            Latest Date Sent
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="odd">
+                          <td class="sorting_1 dtr-control">112</td>
+                          <td class="">233541533923</td>
+                          <td>6902</td>
+                          <td>14</td>
+                          <td>22</td>
+                          <td>Registered</td>
+                          <td>Ghana</td>
+                          <td>9th July, 2022</td>
+                          <td>16th July, 2022</td>
+                        </tr>
+                        <tr class="even">
+                            <td class="sorting_1 dtr-control">112</td>
+                            <td class="">233541533923</td>
+                            <td>6902</td>
+                            <td>14</td>
+                            <td>22</td>
+                            <td>Registered</td>
+                            <td>Ghana</td>
+                            <td>9th July, 2022</td>
+                            <td>16th July, 2022</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12 col-md-5">
+                    <div
+                      class="dataTables_info"
+                      id="datatable_info"
+                      role="status"
+                      aria-live="polite"
+                    >
+                      Showing 1 to 10 of 57 entries
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-7">
+                    <div
+                      class="dataTables_paginate paging_simple_numbers"
+                      id="datatable_paginate"
+                    >
+                      <ul class="pagination">
+                        <li
+                          class="paginate_button page-item previous disabled"
+                          id="datatable_previous"
+                        >
+                          <a
+                            href="#"
+                            aria-controls="datatable"
+                            data-dt-idx="0"
+                            tabindex="0"
+                            class="page-link"
+                            >Previous</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item active">
+                          <a
+                            href="#"
+                            aria-controls="datatable"
+                            data-dt-idx="1"
+                            tabindex="0"
+                            class="page-link"
+                            >1</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item">
+                          <a
+                            href="#"
+                            aria-controls="datatable"
+                            data-dt-idx="2"
+                            tabindex="0"
+                            class="page-link"
+                            >2</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item">
+                          <a
+                            href="#"
+                            aria-controls="datatable"
+                            data-dt-idx="3"
+                            tabindex="0"
+                            class="page-link"
+                            >3</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item">
+                          <a
+                            href="#"
+                            aria-controls="datatable"
+                            data-dt-idx="4"
+                            tabindex="0"
+                            class="page-link"
+                            >4</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item">
+                          <a
+                            href="#"
+                            aria-controls="datatable"
+                            data-dt-idx="5"
+                            tabindex="0"
+                            class="page-link"
+                            >5</a
+                          >
+                        </li>
+                        <li class="paginate_button page-item">
+                          <a
+                            href="#"
+                            aria-controls="datatable"
+                            data-dt-idx="6"
+                            tabindex="0"
+                            class="page-link"
+                            >6</a
+                          >
+                        </li>
+                        <li
+                          class="paginate_button page-item next"
+                          id="datatable_next"
+                        >
+                          <a
+                            href="#"
+                            aria-controls="datatable"
+                            data-dt-idx="7"
+                            tabindex="0"
+                            class="page-link"
+                            >Next</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+    </div>
+  </div>
+  <!-- End Page-content -->
+
+  {% block footer %} {% include 'partials/footer.html' %} {% endblock footer %}
+</div>
+<!-- end main content-->
+{% endblock content %} {% block extra_js %}
+<!-- Card Masonry -->
+<script src="{% static 'libs/masonry-layout/dist/masonry.pkgd.min.js'%}"></script>
+{% endblock extra_js %}

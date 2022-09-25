@@ -1,0 +1,580 @@
+{% extends 'partials/base.html' %} {% load static %} {% load widget_tweaks %} 
+{% block title %}Win Audit{% endblock title %} {% block content %}
+<!-- ============================================================== -->
+<!-- Start right Content here -->
+<!-- ============================================================== -->
+<div class="main-content">
+  <div class="page-content">
+    <div class="container-fluid">
+      <!-- start page title -->
+      <div class="row">
+        <div class="col-12">
+          <div
+            class="page-title-box d-sm-flex align-items-center justify-content-between"
+          >
+            <h4 class="mb-sm-0 font-size-18">Win Audits</h4>
+            <div class="page-title-right">
+              <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item">
+                  <a href="/">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Win Audits</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-box">
+            <div class="card-head"></div>
+            <div class="card-body">
+              <div class="table-scrollable">
+                <div
+                  id="example4_wrapper"
+                  class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"
+                >
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                      <div class="dataTables_length" id="example4_length">
+                        <label
+                          >Show
+                          <select
+                            name="example4_length"
+                            aria-controls="example4"
+                            class="form-control form-control-sm"
+                          >
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                          </select>
+                          entries</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                      <div id="example4_filter" class="dataTables_filter">
+                        <label
+                          >Search:<input
+                            type="search"
+                            class="form-control form-control-sm"
+                            placeholder=""
+                            aria-controls="example4"
+                        /></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="dataTables_scroll">
+                        <div
+                          class="dataTables_scrollHead"
+                          style="
+                            overflow: hidden;
+                            position: relative;
+                            border: 0px;
+                            width: 100%;
+                          "
+                        >
+                          <div
+                            class="dataTables_scrollHeadInner"
+                            style="
+                              box-sizing: content-box;
+                              width: 1297px;
+                              padding-right: 0px;
+                            "
+                          >
+                            <table
+                              class="table table-hover table-checkable order-column full-width dataTable no-footer"
+                              role="grid"
+                              style="margin-left: 0px; width: 1297px"
+                            >
+                              <thead>
+                                <tr role="row">
+                                  <th
+                                    class="center sorting_asc"
+                                    tabindex="0"
+                                    aria-controls="example4"
+                                    rowspan="1"
+                                    colspan="1"
+                                    style="width: 50.9219px"
+                                    aria-sort="ascending"
+                                    aria-label=" # : activate to sort column descending"
+                                  >
+                                    #
+                                  </th>
+                                  <th
+                                    class="center sorting"
+                                    tabindex="0"
+                                    aria-controls="example4"
+                                    rowspan="1"
+                                    colspan="1"
+                                    style="width: 338.344px"
+                                    aria-label=" User : activate to sort column ascending"
+                                  >
+                                    User
+                                  </th>
+                                  <th
+                                    class="center sorting"
+                                    tabindex="0"
+                                    aria-controls="example4"
+                                    rowspan="1"
+                                    colspan="1"
+                                    style="width: 107.672px"
+                                    aria-label=" Phone : activate to sort column ascending"
+                                  >
+                                    Phone
+                                  </th>
+                                  <th
+                                    class="center sorting"
+                                    tabindex="0"
+                                    aria-controls="example4"
+                                    rowspan="1"
+                                    colspan="1"
+                                    style="width: 67.2031px"
+                                    aria-label=" Plan : activate to sort column ascending"
+                                  >
+                                    Plan
+                                  </th>
+                                  <th
+                                    class="center sorting"
+                                    tabindex="0"
+                                    aria-controls="example4"
+                                    rowspan="1"
+                                    colspan="1"
+                                    style="width: 65.1875px"
+                                    aria-label=" Price : activate to sort column ascending"
+                                  >
+                                    Price
+                                  </th>
+                                  <th
+                                    class="center sorting"
+                                    tabindex="0"
+                                    aria-controls="example4"
+                                    rowspan="1"
+                                    colspan="1"
+                                    style="width: 171.422px"
+                                    aria-label=" B2B Commision : activate to sort column ascending"
+                                  >
+                                    B2B Commision
+                                  </th>
+                                  <th
+                                    class="center sorting"
+                                    tabindex="0"
+                                    aria-controls="example4"
+                                    rowspan="1"
+                                    colspan="1"
+                                    style="width: 238.25px"
+                                    aria-label=" Date : activate to sort column ascending"
+                                  >
+                                    Date
+                                  </th>
+                                </tr>
+                              </thead>
+                            </table>
+                          </div>
+                        </div>
+                        <div
+                          class="dataTables_scrollBody"
+                          style="
+                            position: relative;
+                            overflow: auto;
+                            width: 100%;
+                          "
+                        >
+                          <table
+                            class="table table-hover table-checkable order-column full-width dataTable no-footer"
+                            id="example4"
+                            role="grid"
+                            aria-describedby="example4_info"
+                            style="width: 1299px"
+                          >
+                            <thead>
+                              <tr role="row" style="height: 0px">
+                                <th
+                                  class="center sorting"
+                                  aria-controls="example4"
+                                  rowspan="1"
+                                  colspan="1"
+                                  style="
+                                    width: 50.9219px;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                    border-top-width: 0px;
+                                    border-bottom-width: 0px;
+                                    height: 0px;
+                                  "
+                                >
+                                  <div
+                                    class="dataTables_sizing"
+                                    style="height: 0; overflow: hidden"
+                                  >
+                                    #
+                                  </div>
+                                </th>
+                                <th
+                                  class="center sorting"
+                                  aria-controls="example4"
+                                  rowspan="1"
+                                  colspan="1"
+                                  style="
+                                    width: 338.344px;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                    border-top-width: 0px;
+                                    border-bottom-width: 0px;
+                                    height: 0px;
+                                  "
+                                >
+                                  <div
+                                    class="dataTables_sizing"
+                                    style="height: 0; overflow: hidden"
+                                  >
+                                    User
+                                  </div>
+                                </th>
+                                <th
+                                  class="center sorting"
+                                  aria-controls="example4"
+                                  rowspan="1"
+                                  colspan="1"
+                                  style="
+                                    width: 107.672px;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                    border-top-width: 0px;
+                                    border-bottom-width: 0px;
+                                    height: 0px;
+                                  "
+                                >
+                                  <div
+                                    class="dataTables_sizing"
+                                    style="height: 0; overflow: hidden"
+                                  >
+                                    Phone
+                                  </div>
+                                </th>
+                                <th
+                                  class="center sorting"
+                                  aria-controls="example4"
+                                  rowspan="1"
+                                  colspan="1"
+                                  style="
+                                    width: 67.2031px;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                    border-top-width: 0px;
+                                    border-bottom-width: 0px;
+                                    height: 0px;
+                                  "
+                                >
+                                  <div
+                                    class="dataTables_sizing"
+                                    style="height: 0; overflow: hidden"
+                                  >
+                                    Plan
+                                  </div>
+                                </th>
+                                <th
+                                  class="center sorting"
+                                  aria-controls="example4"
+                                  rowspan="1"
+                                  colspan="1"
+                                  style="
+                                    width: 65.1875px;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                    border-top-width: 0px;
+                                    border-bottom-width: 0px;
+                                    height: 0px;
+                                  "
+                                >
+                                  <div
+                                    class="dataTables_sizing"
+                                    style="height: 0; overflow: hidden"
+                                  >
+                                    Price
+                                  </div>
+                                </th>
+                                <th
+                                  class="center sorting"
+                                  aria-controls="example4"
+                                  rowspan="1"
+                                  colspan="1"
+                                  style="
+                                    width: 171.422px;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                    border-top-width: 0px;
+                                    border-bottom-width: 0px;
+                                    height: 0px;
+                                  "
+                                >
+                                  <div
+                                    class="dataTables_sizing"
+                                    style="height: 0; overflow: hidden"
+                                  >
+                                    B2B Commision
+                                  </div>
+                                </th>
+                                <th
+                                  class="center sorting"
+                                  aria-controls="example4"
+                                  rowspan="1"
+                                  colspan="1"
+                                  style="
+                                    width: 238.25px;
+                                    padding-top: 0px;
+                                    padding-bottom: 0px;
+                                    border-top-width: 0px;
+                                    border-bottom-width: 0px;
+                                    height: 0px;
+                                  "
+                                >
+                                  <div
+                                    class="dataTables_sizing"
+                                    style="height: 0; overflow: hidden"
+                                  >
+                                    Date
+                                  </div>
+                                </th>
+                              </tr>
+                            </thead>
+
+                            <tbody>
+                              <tr class="gradeX odd" id="remove_" role="row">
+                                <td class="center sorting_1">1</td>
+                                <td class="center">Prince Akuamoah Boakye</td>
+                                <td class="center">502348184</td>
+                                <td class="center">1 week</td>
+                                <td class="center">10.00</td>
+                                <td class="center">4.00</td>
+                                <td class="center">26th Mar, 2020 07:49 pm</td>
+                              </tr>
+                              <tr class="gradeX even" id="remove_" role="row">
+                                <td class="center sorting_1">2</td>
+                                <td class="center">Daniel Osei</td>
+                                <td class="center">542919314</td>
+                                <td class="center">1 week</td>
+                                <td class="center">10.00</td>
+                                <td class="center">4.00</td>
+                                <td class="center">27th Mar, 2020 10:15 am</td>
+                              </tr>
+                              <tr class="gradeX odd" id="remove_" role="row">
+                                <td class="center sorting_1">3</td>
+                                <td class="center">Prince Akuamoah Boakye</td>
+                                <td class="center">502348184</td>
+                                <td class="center">1 week</td>
+                                <td class="center">10.00</td>
+                                <td class="center">4.00</td>
+                                <td class="center">30th Mar, 2020 09:52 am</td>
+                              </tr>
+                              <tr class="gradeX even" id="remove_" role="row">
+                                <td class="center sorting_1">4</td>
+                                <td class="center">Prince Akuamoah Boakye</td>
+                                <td class="center">502348184</td>
+                                <td class="center">1 week</td>
+                                <td class="center">10.00</td>
+                                <td class="center">4.00</td>
+                                <td class="center">30th Mar, 2020 09:53 am</td>
+                              </tr>
+                              <tr class="gradeX odd" id="remove_" role="row">
+                                <td class="center sorting_1">5</td>
+                                <td class="center">Emmanuel Twumasi</td>
+                                <td class="center">545750453</td>
+                                <td class="center">1 week</td>
+                                <td class="center">10.00</td>
+                                <td class="center">4.00</td>
+                                <td class="center">7th Apr, 2020 11:01 am</td>
+                              </tr>
+                              <tr class="gradeX even" id="remove_" role="row">
+                                <td class="center sorting_1">6</td>
+                                <td class="center">Frank goglo</td>
+                                <td class="center">243987399</td>
+                                <td class="center">1 week</td>
+                                <td class="center">10.00</td>
+                                <td class="center">4.00</td>
+                                <td class="center">9th Apr, 2020 08:00 pm</td>
+                              </tr>
+                              <tr class="gradeX odd" id="remove_" role="row">
+                                <td class="center sorting_1">7</td>
+                                <td class="center">Abubakari Moro</td>
+                                <td class="center">202717758</td>
+                                <td class="center">Monthly</td>
+                                <td class="center">25.00</td>
+                                <td class="center">10.00</td>
+                                <td class="center">11th Apr, 2020 12:58 pm</td>
+                              </tr>
+                              <tr class="gradeX even" id="remove_" role="row">
+                                <td class="center sorting_1">8</td>
+                                <td class="center">Prince Akuamoah Boakye</td>
+                                <td class="center">502348184</td>
+                                <td class="center">1 week</td>
+                                <td class="center">10.00</td>
+                                <td class="center">4.00</td>
+                                <td class="center">14th Apr, 2020 03:26 pm</td>
+                              </tr>
+                              <tr class="gradeX odd" id="remove_" role="row">
+                                <td class="center sorting_1">9</td>
+                                <td class="center">Obeng Gabriel</td>
+                                <td class="center">243759032</td>
+                                <td class="center">2 weeks</td>
+                                <td class="center">15.00</td>
+                                <td class="center">6.00</td>
+                                <td class="center">14th Apr, 2020 05:00 pm</td>
+                              </tr>
+                              <tr class="gradeX even" id="remove_" role="row">
+                                <td class="center sorting_1">10</td>
+                                <td class="center">Ebenezer tetteh</td>
+                                <td class="center">240141253</td>
+                                <td class="center">1 week</td>
+                                <td class="center">10.00</td>
+                                <td class="center">4.00</td>
+                                <td class="center">15th Apr, 2020 10:40 am</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-5">
+                      <div
+                        class="dataTables_info"
+                        id="example4_info"
+                        role="status"
+                        aria-live="polite"
+                      >
+                        Showing 1 to 10 of 4,449 entries
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                      <div
+                        class="dataTables_paginate paging_simple_numbers"
+                        id="example4_paginate"
+                      >
+                        <ul class="pagination">
+                          <li
+                            class="paginate_button page-item previous disabled"
+                            id="example4_previous"
+                          >
+                            <a
+                              href="#"
+                              aria-controls="example4"
+                              data-dt-idx="0"
+                              tabindex="0"
+                              class="page-link"
+                              >Previous</a
+                            >
+                          </li>
+                          <li class="paginate_button page-item active">
+                            <a
+                              href="#"
+                              aria-controls="example4"
+                              data-dt-idx="1"
+                              tabindex="0"
+                              class="page-link"
+                              >1</a
+                            >
+                          </li>
+                          <li class="paginate_button page-item">
+                            <a
+                              href="#"
+                              aria-controls="example4"
+                              data-dt-idx="2"
+                              tabindex="0"
+                              class="page-link"
+                              >2</a
+                            >
+                          </li>
+                          <li class="paginate_button page-item">
+                            <a
+                              href="#"
+                              aria-controls="example4"
+                              data-dt-idx="3"
+                              tabindex="0"
+                              class="page-link"
+                              >3</a
+                            >
+                          </li>
+                          <li class="paginate_button page-item">
+                            <a
+                              href="#"
+                              aria-controls="example4"
+                              data-dt-idx="4"
+                              tabindex="0"
+                              class="page-link"
+                              >4</a
+                            >
+                          </li>
+                          <li class="paginate_button page-item">
+                            <a
+                              href="#"
+                              aria-controls="example4"
+                              data-dt-idx="5"
+                              tabindex="0"
+                              class="page-link"
+                              >5</a
+                            >
+                          </li>
+                          <li
+                            class="paginate_button page-item disabled"
+                            id="example4_ellipsis"
+                          >
+                            <a
+                              href="#"
+                              aria-controls="example4"
+                              data-dt-idx="6"
+                              tabindex="0"
+                              class="page-link"
+                              >…</a
+                            >
+                          </li>
+                          <li class="paginate_button page-item">
+                            <a
+                              href="#"
+                              aria-controls="example4"
+                              data-dt-idx="7"
+                              tabindex="0"
+                              class="page-link"
+                              >445</a
+                            >
+                          </li>
+                          <li
+                            class="paginate_button page-item next"
+                            id="example4_next"
+                          >
+                            <a
+                              href="#"
+                              aria-controls="example4"
+                              data-dt-idx="8"
+                              tabindex="0"
+                              class="page-link"
+                              >Next</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end page title -->
+    </div>
+    <!-- End Page-content -->
+
+    {% block footer %} {% include 'partials/footer.html' %} 
+	{% endblock footer %}
+  </div>
+  <!-- end main content-->
+  {% endblock content %} {% block extra_js %}
+  <!-- Card Masonry -->
+  <script src="{% static 'libs/masonry-layout/dist/masonry.pkgd.min.js'%}"></script>
+  {% endblock extra_js %}
+</div>

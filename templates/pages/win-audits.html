@@ -1,0 +1,90 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}Win Audit{% endblock title %}
+
+{% block content %}
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Win Audits</h4>
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">Win Audits</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- end page title -->
+					<div class="row">
+                        <div class="col-md-12">
+                            <div class="card card-box">
+                                <div class="card-head">
+                                </div>
+                                <div class="card-body ">
+                                    <div class="table-scrollable">
+                                    <table class="table table-hover table-checkable order-column full-width dataTable no-footer" id="example4">
+                                        <thead>
+                                            <tr>
+                                                <th class="center"> # </th>
+                                                <th class="center"> User </th>
+                                                <th> Transaction </th>
+                                                <th class="center"> Draw </th>
+                                                <th class="center"> Draw Date </th>
+                                                <th class="center"> Date added </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>								
+											<tr class="gradeX" id="remove_1775363">
+												<td class="center">1</td>
+												<td class="center">Kwasi gyamfi<br>552289787</td>
+												<td>Credit User Kwasi gyamfi with amount 2 (TransactionId - b6605a8a36d84b3fa540ae9595f7b03a)</td>
+                                                <td>B2B Saturday</td>
+                                                <td class="center">4th Sep, 2022</td>
+												<td class="center">4th Sep, 2022 12:22 am</td>
+											</tr>
+																					
+											<tr class="gradeX" id="remove_1775362">
+												<td class="center">2</td>
+												<td class="center">Kwasi gyamfi<br>552289787</td>
+												<td>Kwasi gyamfi - (win balance - 0.0000, credit - 1.9000) 
+													request deposit of (amount - 2, mtn-gh)</td>
+                                                <td>B2B Saturday</td>
+                                                <td class="center">4th Sep, 2022</td>
+												<td class="center">4th Sep, 2022 12:21 am</td>
+											</tr>
+										</tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <!-- End Page-content -->
+            
+            {% block footer %}
+                {% include 'partials/footer.html' %}
+            {% endblock footer %}
+        </div>
+        <!-- end main content-->
+{% endblock content %}
+
+{% block extra_js %}
+    <!-- Card Masonry -->
+    <script src="{% static 'libs/masonry-layout/dist/masonry.pkgd.min.js'%}"></script>
+{% endblock extra_js %}

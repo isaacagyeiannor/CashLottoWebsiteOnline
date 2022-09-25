@@ -1,0 +1,56 @@
+{% extends "mainwebsite/base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <!-- inner hero section start -->
+<section class="inner-banner bg_img" style="background: url({% static 'mainwebsite/images/inner-banner/bg2.jpg'%}) top;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        <h2 class="title text-white">Pro Forecasters</h2>
+        <ul class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>forecasters</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- inner hero section end -->
+
+    <!-- Game Section Starts Here -->
+    <section class="game-section padding-top padding-bottom bg_img" style="background: url({% static 'mainwebsite/images/game/bg3.jpg'%});">
+        <div class="container">
+            <div class="row gy-4 justify-content-center">
+                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6">
+                    <div class="game-item">
+                        <div class="game-inner">
+                            <div class="game-item__thumb">
+                                <img src="{% static 'mainwebsite/images/game/tail.png'%}" alt="game">
+                            </div>
+                            <div class="game-item__content">
+                                <h4 class="title">Ankomah Ellen</h4>
+                                <p>Status: banker to banker</p>
+                                <p class="invest-amount">Rank points  | 6000</p>
+                                <a data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="cmn--btn active btn--md radius-0">Subscribe <i class="las la-info-circle"></i></a>
+                            </div>
+                        </div>
+                        <div class="ball"></div>
+                    </div>
+                </div>
+            </div>
+           <!-- pagination --> 
+           {% comment %} <ul class="pagination">
+                <li class="page-item disabled"><a href="#0" class="page-link"><i class="las la-arrow-left"></i></a></li>
+                <li class="page-item active"><a href="#0" class="page-link">01</a></li>
+                <li class="page-item"><a href="#0" class="page-link">02</a></li>
+                <li class="page-item"><a href="#0" class="page-link">03</a></li>
+                <li class="page-item"><a href="#0" class="page-link"><i class="las la-arrow-right"></i></a></li> {% endcomment %}
+            </ul>
+            <!-- end pagination --> 
+        </div>
+    </section>
+    <!-- Game Section Ends Here -->
+    
+    {% endblock %}

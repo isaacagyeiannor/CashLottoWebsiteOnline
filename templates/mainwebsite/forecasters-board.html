@@ -1,0 +1,175 @@
+{% extends "mainwebsite/base/base.html" %}
+{% load static %}
+{%load widget_tweaks%}
+ 
+ 
+ {% block content %}
+<!-- inner hero section start -->
+<section
+  class="inner-banner bg_img"
+  style="background: url('{% static 'mainwebsite/images/inner-banner/bg2.jpg'%}) top;"
+>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        <h2 class="title text-white">Forecasters Board</h2>
+        <ul
+          class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center"
+        >
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>Dashboard</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- inner hero section end -->
+
+<!-- Dashboard Section Starts Here -->
+<div class="dashboard-section padding-top padding-bottom">
+  <div class="container">
+    <div class="row">
+      {% include 'mainwebsite/include/user-dashboard.html' %}
+      <div class="col-lg-9">
+        <div class="user-toggler-wrapper d-flex align-items-center d-lg-none">
+          <h4 class="title m-0">Forecasters Board</h4>
+          <div class="user-toggler">
+            <i class="las la-sliders-h"></i>
+          </div>
+        </div>
+        <div class="row justify-content-center g-4">
+          <div class="col-lg-6 col-xl-4 col-md-6 col-sm-10">
+            <div class="dashboard__card">
+              <div class="dashboard__card-content">
+                <h2 class="price">GH₵4550</h2>
+                <p class="info">CREDIT</p>
+                <a href="{% url 'paymentslog' %}" class="view-btn">View All</a>
+              </div>
+              <div class="dashboard__card-icon">
+                <i class="las la-wallet"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-4 col-md-6 col-sm-10">
+            <div class="dashboard__card">
+              <div class="dashboard__card-content">
+                <h2 class="price">40</h2>
+                <p class="info">SUBSCRIBERS</p>
+                <a href="{% url 'forecastersubscribers' %}" class="view-btn">View All</a>
+              </div>
+              <div class="dashboard__card-icon">
+                <i class="las la-money-check"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-4 col-md-6 col-sm-10">
+            <div class="dashboard__card">
+              <div class="dashboard__card-content">
+                <h2 class="price">600</h2>
+                <p class="info">RATINGS</p>
+                <a href="{% url 'withdrawal' %}" class="view-btn">View All</a>
+              </div>
+              <div class="dashboard__card-icon">
+                <i class="las la-star"></i>
+              </div>
+            </div>
+          </div>
+        <div class="row justify-content-center g-4">
+            <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
+                <div class="dashboard__card">
+                <h3>Predict</h3>
+                <form class="account__form form row g-4" method='POST'>{% csrf_token %}
+                    <div class="col-xl-6 col-md-6">
+                        <div class="form-group">
+                            <div for="fname" class="input-pre-icon"><i class="las la-calendar"></i></div>
+                            {% comment %} <input id="fname" type="date"  class="form--control form-control style--two" placeholder="date" required="">  {% endcomment %}
+                            {% render_field form.date_select id="fname"  type="date" class="form--control form-control style--two text-align: center"   %} 
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6">
+                        <div class="form-group">
+                            <div for="country" class="input-pre-icon"><i class="las la-globe"></i></div>
+                            {% comment %} <select class="form-select form--control style--two">
+                                <option>Monday Special</option>
+                                <option>Tuesday</option>
+                                <option>Wednesday money</option>
+                            </select> {% endcomment %}
+                            {% render_field form.draw_type class="form-select form--control style--two" id="formrow-number-input" %}
+                        </div>
+                    </div>
+                    <div class="row mt-3">                                                            
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                              {% comment %} <input type="number" name='first_number' class="form-control" id="formrow-number-input">  {% endcomment %}
+                              {% render_field form.first_number class="form-control" id="formrow-number-input" %} 
+                            </div>
+                            {{form.first_number.errors}} 
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                              {% render_field form.second_number class="form-control" id="formrow-number-input" %}
+                            </div>
+                            {{form.second_number.errors}} 
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                              {% render_field form.third_number class="form-control" id="formrow-number-input" %}
+                            </div>
+                            {{form.third_number.errors}} 
+                          </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                              {% render_field form.fourth_number class="form-control" id="formrow-number-input" %}
+                            </div>
+                            {{form.fourth_number.errors}} 
+                        </div>
+                        <div class="col-md-3">
+                          <div class="mb-3">
+                            {% render_field form.fifth_number class="form-control" id="formrow-number-input" %}
+                          </div>
+                          {{form.fifth_number.errors}} 
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                          <button type="Submit" class="cmn--btn active w-100 btn--round">Predict</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+        <div class="table--responsive--md mt-5">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Game</th>
+                <th>Prediction</th>
+                <th>Draw</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for predict in prediction %}
+              <tr>
+                <td class="trx-id" data-label="Transection ID">
+                  {{predict.date_select}}, {{predict.date_created|timesince}} ago
+                </td>
+                <td class="trx-type" data-label="Transection Type">
+                  {{predict.draw_type}}
+                </td>
+                <td class="date" data-label="Date"> {{predict.first_number}}-{{predict.second_number}}-{{predict.third_number}}- {{predict.fourth_number}}- {{predict.fifth_number}}</td>
+                <td class="amount" data-label="Amount">{{predict.win_draw.first_number}}-{{predict.win_draw.second_number}}-{{predict.win_draw.third_number}}- {{predict.win_draw.fourth_number}}</td>
+              </tr>
+              {% endfor%}
+            
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Dashboard Section Ends Here -->
+
+{% endblock %}

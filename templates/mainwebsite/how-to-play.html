@@ -1,0 +1,93 @@
+{% extends "mainwebsite/base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <!-- inner hero section start -->
+<section class="inner-banner bg_img" style="background: url({% static 'mainwebsite/images/inner-banner/bg2.jpg' %}) top;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        <h2 class="title text-white">How to play</h2>
+        <ul class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>How to Play</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- inner hero section end -->
+
+
+    <!-- Privacy Policy Section Starts Here -->
+    <section class="privacy-policy padding-top padding-bottom">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-3">
+                    <ul class="privacy-policy-sidebar-menu">
+                        <li>
+                            <a href="#overview" class="active nav-link">Overview</a>
+                        </li>
+                        <li>
+                            <a href="#data-collection" class="nav-link">Direct 2</a>
+                        </li>
+                        <li>
+                            <a href="#cookies" class="nav-link">Direct 3</a>
+                        </li>
+                        <li>
+                            <a href="#data-security" class="nav-link">Perm 2</a>
+                        </li>
+                        <li>
+                            <a href="#overview2" class="nav-link">Perm 3</a>
+                        </li>
+                        <li>
+                            <a href="#overview3" class="nav-link">Banker 1 against all numbers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-9">
+                    <div class="privacy-policy-content">
+                        <div class="content-item">
+                            <h4 class="title" id="overview">Overview</h4>
+                            <p>
+                                Players select at least one out of ninety balls numbered 1-90. A draw is held at the end of each day except Sundays to randomly select 5 out of the 90 balls. If the numbers on the 5 selected balls match any of the numbers selected by the player at the time of play, then he is a winner. The daily draw games are Monday Special, Lucky Tuesday, Midweek, Fortune Thursday, Friday Bonanza and National Weekly on Saturdays. Variations of the games to play each day are below:
+                            </p>
+                        </div>
+                        <div class="content-item">
+                            <h4 class="title" id="data-collection">Direct 2</h4>
+                            <p>
+                                Any two numbers out of the 5 winning numbers to be drawn. (e.g. If a player selects 49 and 7, he is a winner if 49 and 7 are among the 5 numbers drawn)
+                            </p>
+                        </div>
+                        <div class="content-item">
+                            <h4 class="title" id="cookies">Direct 3</h4>
+                            <p>
+                                Any three numbers out of the 5 winning numbers to be drawn. (e.g. If a player selects 11, 44 and 86, he is a winner if 11, 44 and 86 are among the 5 numbers drawn)
+                            </p>
+                        </div>
+                        <div class="content-item">
+                            <h4 class="title" id="data-security">Perm 2 </h4>
+                            <p>
+                                This is basically selecting more than 2 Numbers and combining them in sets of 2. If a player selects numbers 11-22-33, Perm 2 will give combinations of (i) 11-22, (ii) 11-33 and (iii) 22-33. Here, the winning pattern is same as direct-2.
+                            </p>
+                        </div>
+                        <div class="content-item">
+                            <h4 class="title" id="overview2">Perm 3</h4>
+                            <p>
+                                This is basically selecting more than 3 Numbers and combining them in sets of 3. If a player selects numbers 11-22-33-44, Perm 3 will give combinations of (i) 11-22-33, (ii) 11-22-44, (iii) 11-33-44 (iv) 22-33-44. Here, the winning pattern is same as direct-3.
+                            </p>
+                        </div>
+                        <div class="content-item">
+                            <h4 class="title" id="overview3">Banker 1 against all numbers: </h4>
+                            <p>
+                                This is selecting one number and pairing it with the rest of 89 numbers. (e.g. if player selects 70 against all, this means 70 is his banker.) This banker must be one of the 5 winning numbers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Privacy Policy Section Ends Here -->
+{% endblock %}

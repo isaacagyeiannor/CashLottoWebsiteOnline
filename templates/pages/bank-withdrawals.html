@@ -1,0 +1,312 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %}Bank Withdrawals{% endblock title %}
+
+{% block content %}
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Bank Withdrawals</h4>
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">Bank Withdrawals</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+					<div class="row">
+						<div class="col-lg-12">
+						  <div class="card">
+							<div class="card-body">
+				
+							  <div class="table-responsive mb-4">
+								<div
+								  id="DataTables_Table_0_wrapper"
+								  class="dataTables_wrapper dt-bootstrap4 no-footer"
+								>
+								  <div class="row">
+									<div class="col-sm-12 col-md-6">
+									  <div
+										class="dataTables_length"
+										id="DataTables_Table_0_length"
+									  >
+										<label
+										  >Show
+										  <select
+											name="DataTables_Table_0_length"
+											aria-controls="DataTables_Table_0"
+											class="custom-select custom-select-sm form-control form-control-sm form-select form-select-sm"
+										  >
+											<option value="10">10</option>
+											<option value="25">25</option>
+											<option value="50">50</option>
+											<option value="100">100</option>
+										  </select>
+										  entries</label
+										>
+									  </div>
+									</div>
+									<div class="col-sm-12 col-md-6">
+									  <div
+										id="DataTables_Table_0_filter"
+										class="dataTables_filter"
+									  >
+										<label
+										  >Search:<input
+											type="search"
+											class="form-control form-control-sm"
+											placeholder=""
+											aria-controls="DataTables_Table_0"
+										/></label>
+									  </div>
+									</div>
+								  </div>
+								  <div class="row">
+									<div class="col-sm-12">
+									  <table
+										class="table align-middle datatable dt-responsive table-check nowrap dataTable no-footer"
+										style="
+										  border-collapse: collapse;
+										  border-spacing: 0px 8px;
+										  width: 100%;
+										"
+										id="DataTables_Table_0"
+										role="grid"
+										aria-describedby="DataTables_Table_0_info"
+									  >
+										<thead>
+										  <tr role="row">
+											<th
+											  scope="col"
+											  style="width: 50px"
+											  class="sorting sorting_asc"
+											  tabindex="0"
+											  aria-controls="DataTables_Table_0"
+											  rowspan="1"
+											  colspan="1"
+											  aria-sort="ascending"
+											  aria-label="
+													 
+														 
+														 
+													 
+												 : activate to sort column descending"
+											>
+											  <div class="form-check font-size-16">
+												<input
+												  type="checkbox"
+												  class="form-check-input"
+												  id="checkAll"
+												/>
+												<label
+												  class="form-check-label"
+												  for="checkAll"
+												></label>
+											  </div>
+											</th>
+											<th
+											  scope="col"
+											  class="sorting"
+											  tabindex="0"
+											  aria-controls="DataTables_Table_0"
+											  rowspan="1"
+											  colspan="1"
+											  aria-label="Name: activate to sort column ascending"
+											>
+											  #
+											</th>
+											<th
+											  scope="col"
+											  class="sorting"
+											  tabindex="0"
+											  aria-controls="DataTables_Table_0"
+											  rowspan="1"
+											  colspan="1"
+											  aria-label="Position: activate to sort column ascending"
+											>
+											  Customer
+											</th>
+											<th
+											  scope="col"
+											  class="sorting"
+											  tabindex="0"
+											  aria-controls="DataTables_Table_0"
+											  rowspan="1"
+											  colspan="1"
+											  aria-label="Email: activate to sort column ascending"
+											>
+											  Withdrawal Amount
+											</th>
+											<th
+											  scope="col"
+											  class="sorting"
+											  tabindex="0"
+											  aria-controls="DataTables_Table_0"
+											  rowspan="1"
+											  colspan="1"
+											  aria-label="Tags: activate to sort column ascending"
+											>
+											  Status
+											</th>
+											<th
+											  scope="col"
+											  class="sorting"
+											  tabindex="0"
+											  aria-controls="DataTables_Table_0"
+											  rowspan="1"
+											  colspan="1"
+											  aria-label="Action: activate to sort column ascending"
+											>
+											  Date Ordered
+											</th>
+											<th
+											  scope="col"
+											  class="sorting"
+											  tabindex="0"
+											  aria-controls="DataTables_Table_0"
+											  rowspan="1"
+											  colspan="1"
+											  aria-label="Action: activate to sort column ascending"
+											>
+											  Action
+											</th>
+										  </tr>
+										</thead>
+										<tbody>
+										  <tr class="odd gradeX" id="remove_25991">
+											<th scope="row" class="sorting_1">
+											  <div class="form-check font-size-16">
+												<input
+												  type="checkbox"
+												  class="form-check-input"
+												  id="contacusercheck10"
+												/>
+												<label
+												  class="form-check-label"
+												  for="contacusercheck10"
+												></label>
+											  </div>
+											</th>
+											<td>
+											  <a href="#" class="text-body">1</a>
+											</td>
+											<td class="center">Stephen Sunday oluwabamidele<br/>
+												8109782700<br/>
+												Acc. No - 2121592268<br/>
+												Bank - United Bank for Africa<br/>
+												(STEPHEN SUNDAY OLUWABAMIDELE)</td>
+											<td class="center">NGN 3300.00 - GHC 46.86</td>
+											<td class="center">PAYED - FLUTTERWAVE</td>
+											<td class="center">15th May, 2022 02:13 pm</td>
+											<td class="center">Approved By - xela haippa</td>
+										  </tr>
+										</tbody>
+									  </table>
+									</div>
+								  </div>
+								  <div class="row">
+									<div class="col-sm-12 col-md-5">
+									  <div
+										class="dataTables_info"
+										id="DataTables_Table_0_info"
+										role="status"
+										aria-live="polite"
+									  >
+										Showing 1 to 10 of 11 entries
+									  </div>
+									</div>
+									<div class="col-sm-12 col-md-7">
+									  <div
+										class="dataTables_paginate paging_simple_numbers"
+										id="DataTables_Table_0_paginate"
+									  >
+										<ul class="pagination">
+										  <li
+											class="paginate_button page-item previous disabled"
+											id="DataTables_Table_0_previous"
+										  >
+											<a
+											  href="#"
+											  aria-controls="DataTables_Table_0"
+											  data-dt-idx="0"
+											  tabindex="0"
+											  class="page-link"
+											  >Previous</a
+											>
+										  </li>
+										  <li class="paginate_button page-item active">
+											<a
+											  href="#"
+											  aria-controls="DataTables_Table_0"
+											  data-dt-idx="1"
+											  tabindex="0"
+											  class="page-link"
+											  >1</a
+											>
+										  </li>
+										  <li class="paginate_button page-item">
+											<a
+											  href="#"
+											  aria-controls="DataTables_Table_0"
+											  data-dt-idx="2"
+											  tabindex="0"
+											  class="page-link"
+											  >2</a
+											>
+										  </li>
+										  <li
+											class="paginate_button page-item next"
+											id="DataTables_Table_0_next"
+										  >
+											<a
+											  href="#"
+											  aria-controls="DataTables_Table_0"
+											  data-dt-idx="3"
+											  tabindex="0"
+											  class="page-link"
+											  >Next</a
+											>
+										  </li>
+										</ul>
+									  </div>
+									</div>
+								  </div>
+								</div>
+								<!-- end table -->
+							  </div>
+							  <!-- end table responsive -->
+							</div>
+						  </div>
+						</div>
+					  </div>
+                    
+                	</div>
+            </div>
+            <!-- End Page-content -->
+            
+            {% block footer %}
+                {% include 'partials/footer.html' %}
+            {% endblock footer %}
+        </div>
+        <!-- end main content-->
+{% endblock content %}
+
+{% block extra_js %}
+    <!-- Card Masonry -->
+    <script src="{% static 'libs/masonry-layout/dist/masonry.pkgd.min.js'%}"></script>
+{% endblock extra_js %}

@@ -1,0 +1,155 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Lotto - Online Lottery Platform</title>
+    <link rel="icon" type="image/png" href="{% static 'mainwebsite/images/cashlottofavicon.png'%}" sizes="16x16">
+    <!-- bootstrap 5  -->
+    <link rel="stylesheet" href="{% static 'mainwebsite/css/lib/bootstrap.min.css'%}">
+    <!-- Icon Link  -->
+    <link rel="stylesheet" href="{% static 'mainwebsite/css/all.min.css'%}"> 
+    <link rel="stylesheet" href="{% static 'mainwebsite/css/line-awesome.min.css'%}"> 
+    <link rel="stylesheet" href="{% static 'mainwebsite/css/lib/animate.css'%}">
+    <!-- preloader -->
+    <link rel="stylesheet" href="{% static 'mainwebsite/css/preloader.css'%}">
+
+    <!-- Plugin Link -->
+    <link rel="stylesheet" href="{% static 'mainwebsite/css/lib/slick.css'%}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'mainwebsite/css/main.css'%}">
+</head>
+    <body data-bs-spy="scroll" data-bs-offset="170" data-bs-target=".privacy-policy-sidebar-menu">
+            <div class="overlay"></div>
+            <div class="preloader">
+                <div class="wrap">
+                    <div class="loading">
+                      <div class="bounceball"></div>
+                      <div class="text">LOADING YOUR RICHES...</div>
+                    </div>
+                  </div>
+            </div>
+    
+        <div class="header">
+        <div class="container">
+            <div class="header-bottom">
+                <div class="header-bottom-area align-items-center">
+                    <div class="logo"><a href="/"><img src="{% static 'mainwebsite/images/cashlottoletterlogo.png'%}" alt="logo"></a></div>
+                    <ul class="menu">
+                        <li>
+                            <a href="{% url 'home'%}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'stakelottery'%}">Lottery <span class="badge badge--sm badge--base text-dark">stake here</span></a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{% url 'stakelottery'%}">Stake</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'forecasters'%}">Forecasters</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'lotteryresults'%}">Results</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{% url 'blogs'%}">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#0">About</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{% url 'aboutus'%}">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'contactus'%}">Contact Us</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#0">Sign Up/In</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{% url 'signin' %}">Sign In</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'signup' %}">Sign Up</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#0">Account</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="{% url 'userdashboard' %}">User Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'faq' %}">Faq</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'privacypolicy' %}">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'termsandconditions' %}">Terms & Conditions</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <button class="btn-close btn-close-white d-lg-none"></button>
+                    </ul>
+                    <div class="header-trigger-wrapper d-flex d-lg-none align-items-center">
+                        <div class="header-trigger me-4">
+                            <span></span>
+                        </div>
+                        <a href="signin/" class="cmn--btn active btn--md d-none d-sm-block">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        {% block content %}
+        {% endblock %}
+        
+    <!-- Footer Section Starts Here -->
+<footer class="footer-section bg_img" style="background: url({% static 'mainwebsite/images/footer/bglottery.jpg' %}) center;">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-wrapper d-flex flex-wrap align-items-center justify-content-md-between justify-content-center">
+                <div class="logo mb-3 mb-md-0"><a href="{% url 'home' %}"><img src="{% static 'mainwebsite/images/cashlottoletterlogo.png'%}" alt="logo"></a></div>
+                <ul class="footer-links d-flex flex-wrap justify-content-center">
+                    <li><a href="{% url 'stakelottery' %}">Games</a></li>
+                    <li><a href="{% url 'termsandconditions' %}">Terms & Conditions</a></li>
+                    <li><a href="{% url 'privacypolicy' %}">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-wrapper d-flex flex-wrap justify-content-center align-items-center text-center">
+                <p class="copyright text-white">Copyrights &copy; 2022 All Rights Reserved by <a href="#0" class=" text--base ms-2">CashLotto</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="shapes">
+        <img src="{% static 'mainwebsite/images/footer/footer_shape.png' %}" alt="footer" class="shape1">
+    </div>
+</footer>
+<!-- Footer Section Ends Here -->
+    
+
+<!-- jQuery library -->
+<script src="{% static 'mainwebsite/js/lib/jquery-3.6.0.min.js'%}"></script>
+<!-- bootstrap 5 js -->
+<script src="{% static 'mainwebsite/js/lib/bootstrap.min.js'%}"></script>
+
+<!-- Pluglin Link -->
+<script src="{% static 'mainwebsite/js/lib/slick.min.js'%}"></script>
+
+<!-- main js -->
+<script src="{% static 'mainwebsite/js/main.js'%}"></script>  
+</body>
+</html>

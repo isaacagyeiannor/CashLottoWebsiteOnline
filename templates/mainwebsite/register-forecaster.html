@@ -1,0 +1,61 @@
+{% extends "mainwebsite/base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <!-- inner hero section start -->
+<section class="inner-banner bg_img" style="background: url('{% static 'mainwebsite/images/inner-banner/bg2.jpg'%}) top;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        <h2 class="title text-white">Transection Logs</h2>
+        <ul class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>Transection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- inner hero section end -->
+    
+    <!-- Dashboard Section Starts Here -->
+    <div class="dashboard-section padding-top padding-bottom">
+        <div class="container">
+            <div class="row">
+                {% include 'mainwebsite/include/user-dashboard.html' %}
+                
+                <div class="col-lg-9">
+                    <div class="user-toggler-wrapper d-flex align-items-center d-lg-none">
+                        <h4 class="title m-0">User Dashboard</h4>
+                        <div class="user-toggler">
+                            <i class="las la-sliders-h"></i>
+                        </div>
+                    </div>
+                        <div class="custom--card card--lg">
+                            <div class="card--body">
+                                <div class="row gy-3">    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="fname" class="form-label">Forecast Name</label>
+                                            <input id="fname" type="text" class="form-control form--control style-two " placeholder="testuser">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="lname" class="form-label">Tagline</label>
+                                            <input id="lname" type="text" class="form-control form--control style-two " placeholder="testuser">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <button class="cmn--btn active mt-3">Request Upgrade</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Section Ends Here -->
+    {% endblock %}

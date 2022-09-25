@@ -1,0 +1,81 @@
+{% extends "mainwebsite/base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <!-- inner hero section start -->
+<section class="inner-banner bg_img" style="background: url('{% static 'mainwebsite/images/inner-banner/bg2.jpg'%}) top;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        <h2 class="title text-white">Subscribed Forecasters</h2>
+        <ul class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>Dashboard</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- inner hero section end -->
+
+    <!-- Dashboard Section Starts Here -->
+    <div class="dashboard-section padding-top padding-bottom">
+        <div class="container">
+            <div class="row">
+                {% include 'mainwebsite/include/user-dashboard.html' %}
+                <div class="col-lg-9">
+                    <div class="user-toggler-wrapper d-flex align-items-center d-lg-none">
+                        <h4 class="title m-0">User Dashboard</h4>
+                        <div class="user-toggler">
+                            <i class="las la-sliders-h"></i>
+                        </div>
+                    </div>
+                    <div class="pt-5 row gy-4 justify-content-center">
+                        <!--Play Game-->
+                        {% for predict in prediction %}
+                        <div class="col-lg-6 col-xl-4 col-md-6 col-sm-6">
+                            <div class="game-item">
+                                <div class="game-inner">
+                                    <div class="game-item__thumb">
+                                        <img src="{% static 'mainwebsite/images/game/lucky-tuesday.jpg'%}" alt="game">
+                                    </div>
+                                    <div class="game-item__content">
+                                        <h4 class="title">Georgina Owusu</h4>
+                                        <h5 class="title">{{predict.draw_type}}</h5>
+                                        <p class="invest-info">{{predict.date_select}}</p>
+                                        <p class="invest-amount">Predicted Results </p>
+                                        <div class="container">
+                                            <div class="row">
+                                            <div class="col-3">
+                                                <p>{{predict.first_number}}</p>
+                                            </div>
+                                            <div class="col-3">
+                                                <p>{{predict.second_number}}</p>
+                                            </div>
+                                            <div class="col-3">
+                                                <p>{{predict.third_number}}</p>
+                                            </div>
+                                            <div class="col-3">
+                                                <p>{{predict.fourth_number}}</p>
+                                            </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        <a href="{% url 'stakelottery'%}" class="cmn--btn active btn--md radius-0">Stake Predicted</a>
+                                    </div>
+                                </div>
+                                <div class="ball"></div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!--End Play Game-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Section Ends Here -->
+
+{% endblock %}

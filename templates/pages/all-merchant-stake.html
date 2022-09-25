@@ -1,0 +1,130 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block title %}All Merchant Stakes{% endblock title %}
+
+{% block content %}
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Merchants</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">All Merchants Stake</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <select class="form-select">
+                                            <option>Filter</option>
+                                            <option>Vag Draws</option>
+                                            <option>Today Draws</option>
+                                        </select>
+                                    </div>
+                                    <hr>
+                                    <div class="table-responsive">
+                                        <table class="table table-editable table-nowrap align-middle table-edits">
+                                            <thead>
+                                                <tr style="cursor: pointer;">
+                                                    <th>ID</th>
+                                                    <th>Game</th>
+                                                    <th>Customer</th>
+                                                    <th>Price</th>
+                                                    <th>Commission</th>
+                                                    <th>High Stake</th>
+                                                    <th>Win</th>
+                                                    <th>Added By</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr data-id="1" style="cursor: pointer;">
+                                                    <td data-field="id" style="width: 80px">1</td>
+                                                    <td data-field="Type">29th July, 2022<br>Monday Special</td>
+                                                    <td data-field="date">Isaac Agyei Annor <br>0243129700</td>
+                                                    <td data-field="mobile">2,300</td>
+                                                    <td data-field="total_draws">300</td>
+                                                    <td data-field="total_price">GHS 7000</td>
+                                                    <td data-field="total_won">10</td>
+                                                    <td data-field="draw">Edward</td>
+                                                </tr>
+                                                <tr data-id="1" style="cursor: pointer;">
+                                                    <td data-field="id" style="width: 80px">2</td>
+                                                    <td data-field="Type">29th July, 2022<br>Monday Special</td>
+                                                    <td data-field="date">Isaac Agyei Annor <br>0243129700</td>
+                                                    <td data-field="mobile">2,300</td>
+                                                    <td data-field="total_draws">300</td>
+                                                    <td data-field="total_price">GHS 7000</td>
+                                                    <td data-field="total_won">10</td>
+                                                    <td data-field="draw">Edward</td>
+                                                </tr>
+                                                <tr data-id="1" style="cursor: pointer;">
+                                                    <td data-field="id" style="width: 80px">3</td>
+                                                    <td data-field="Type">29th July, 2022<br>Monday Special</td>
+                                                    <td data-field="date">Isaac Agyei Annor <br>0243129700</td>
+                                                    <td data-field="mobile">2,300</td>
+                                                    <td data-field="total_draws">300</td>
+                                                    <td data-field="total_price">GHS 7000</td>
+                                                    <td data-field="total_won">10</td>
+                                                    <td data-field="draw">Edward</td>
+                                                </tr>
+                                                <tr data-id="1" style="cursor: pointer;">
+                                                    <td data-field="id" style="width: 80px">4</td>
+                                                    <td data-field="Type">29th July, 2022<br>Monday Special</td>
+                                                    <td data-field="date">Isaac Agyei Annor <br>0243129700</td>
+                                                    <td data-field="mobile">2,300</td>
+                                                    <td data-field="total_draws">300</td>
+                                                    <td data-field="total_price">GHS 7000</td>
+                                                    <td data-field="total_won">10</td>
+                                                    <td data-field="draw">Edward</td>
+                                                </tr>
+
+                                            </tbody>
+                                            </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-5">
+                                            <div class="dataTables_info" id="datatable_info" role="status" aria-live="polite">Showing 1 to 10 of 20 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="datatable_previous"><a href="#" aria-controls="datatable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="datatable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="datatable_next"><a href="#" aria-controls="datatable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div> <!-- end col -->
+                    </div>
+                     
+                </div>
+            </div>
+            <!-- End Page-content -->
+            
+            {% block footer %}
+                {% include 'partials/footer.html' %}
+            {% endblock footer %}
+        </div>
+        <!-- end main content-->
+{% endblock content %}
+
+{% block extra_js %}
+    <!-- Card Masonry -->
+    <script src="{% static 'libs/masonry-layout/dist/masonry.pkgd.min.js'%}"></script>
+{% endblock extra_js %}

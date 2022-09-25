@@ -1,0 +1,137 @@
+{% extends "mainwebsite/base/base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+    <!-- inner hero section start -->
+<section class="inner-banner bg_img" style="background: url('{% static 'mainwebsite/images/inner-banner/bg2.jpg'%}) top;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        <h2 class="title text-white">Profile</h2>
+        <ul class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'userdashboard' %}">Dashboard</a></li>
+          <li>Profile</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- inner hero section end -->
+
+    <!-- Profile Section Starts Here -->
+    <form action="" method='POST' enctype='multipart/form-data'>{%csrf_token%}
+    <section class="profile-section padding-top padding-bottom">
+        <div class="container">
+            <div class="profile-edit-wrapper">
+                <div class="row gy-5">
+                    <div class="col-xl-4">
+                        <div class="profile__thumb__edit text-center custom--card">
+                            <div class="card--body">
+                                <div class="thumb">
+                                    <img src="{{request.user.userprofile.avatar.url}}" alt="testimonial">
+                                </div>
+                                <div class="profile__info">
+                                    <h4 class="name">Demo User</h4>
+                                    <p class="username">@demouser123</p>
+                                    <input type="file" name='avatar' class="form-control d-none " id="update-photo"> 
+                                    {% comment %} {% render_field form.avatar class="form-control d-none " id="update-photo" %}  {% endcomment %}
+                                    <label class="cmn--btn active btn--md mt-3" for="update-photo">Update Profile Picture</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-8">
+                        <div class="custom--card card--lg">
+                            <div class="card--body">
+                                <div class="row gy-3">
+                                    <a href="{% url 'registerforecaster' %}"><button type="button" class="btn btn-outline-success">Become a forecaster</button></a>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="fname" class="form-label">First Name</label>
+                                            {% comment %} <input id="fname" type="text" class="form-control form--control style-two " placeholder="testuser"> {% endcomment %}
+                                            {% render_field form.first_name id="fname" class="form--control form-control" placeholder="First name" %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="lname" class="form-label">Last Name</label>
+                                            {% comment %} <input id="lname" type="text" class="form-control form--control style-two " placeholder="testuser"> {% endcomment %}
+                                            {% render_field form.last_name id="lname" class="form--control form-control" placeholder=" Last name" %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="uname" class="form-label">Username</label>
+                                            {% comment %} <input id="text" type="uname" class="form-control form--control style-two " placeholder="testuser"> {% endcomment %}
+                                            {% render_field form.username id="uname" class="form--control form-control" placeholder="username" %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email" class="form-label">Email Address</label>
+                                            {% comment %} <input id="email" type="email" class="form-control form--control style-two " placeholder="testuser@gmail.com"> {% endcomment %}
+                                            {% render_field form.email id="email" class="form--control form-control" placeholder="testuser@gmail.com" %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="country" class="form-label">Country</label>
+                                            {% render_field form.country id="country" class="form--control form-control" placeholder="Country" %}
+                                            {% comment %} <select name="" id="" class="form-select form--select form--control style-one">
+                                                <option value="">Bangladesh</option>
+                                                <option value="">India</option>
+                                                <option value="">English</option>
+                                            </select> {% endcomment %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="number" class="form-label">Phone Number</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text text--base">+233</span>
+                                                {% comment %} <input id="number" type="tel" class="form-control form--control style-two " placeholder="ex. +24 3195 1452"> {% endcomment %}
+                                                {% render_field form.phone_number id="" class="form--control form-control" placeholder="ex. +24 3195 1452" %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="addr" class="form-label">Address</label>
+                                            {% comment %} <input id="addr" type="text" class="form-control form--control style-two " placeholder="Uttara"> {% endcomment %}
+                                            {% render_field form.address id="addr" class="form--control form-control" placeholder="Address" %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="zip" class="form-label">Zip Code</label>
+                                            {% comment %} <input id="zip" type="text" class="form-control form--control style-two " placeholder="1230"> {% endcomment %}
+                                            {% render_field form.code id="zip" class="form--control form-control" placeholder="Zip Code" %}
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label" for="about">About You</label>
+                                            {% comment %} <textarea class="form-control form--control style-two pt-3" placeholder="I'm a Front-end Web Developer. ...."></textarea> {% endcomment %}
+                                            {% render_field form.bio id="about" class="form--control form-control" placeholder="I am a Front-end Web Developer. ...." %}
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <button class="cmn--btn active mt-3">Update Profile</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+    <!-- Profile Section Ends Here -->
+    
+{% endblock %}

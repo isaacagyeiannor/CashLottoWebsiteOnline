@@ -1,0 +1,87 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block title %}Blogs{% endblock title %}
+
+{% block content %}
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0 font-size-18">Blogs</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                                        <li class="breadcrumb-item active">Blogs</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <div class="row">
+                        {% for blog in page_obj %}
+                        <!-- Simple card -->
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <a href="#"><img class="card-img-top img-fluid" src="{{blog.image.url}}" alt="Card image cap"></a>
+                                <div class="card-body">
+                                    <a href="#"><h4 class="card-title">{{blog.title}}</h4></a>
+                                    <p class="card-text">{{blog.content|safe|truncatewords:10}}</p>
+                                </div>
+                                <div class="card-body text-left">
+                                    <a href="{% url 'pages:pages.view_blog' blog.id %}" class="btn btn-primary waves-effect waves-light">Read</a> &nbsp;&nbsp;&nbsp;|
+                                    <a href="{% url 'pages:pages.delete_blog' blog.id %}" class="icon d-none d-md-inline-block ml-3"><i class="fa fa-trash"></i></a> &nbsp;&nbsp;
+                                    <a href="#" class="icon d-none d-md-inline-block ml-3"><i class="fa fa-edit"></i></a>
+                                </div>
+                            </div> 
+                        </div>
+                        <!-- end col -->
+                        {% endfor%}
+                    </div>
+                    <!-- pagination -->
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div>
+                                    <nav aria-label="...">
+                                        <ul class="pagination pagination-lg">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                            </div><!-- end card -->
+                        </div><!-- end col -->   
+                    </div><!-- end row -->  
+                </div>
+            </div>
+            <!-- End Page-content -->
+            
+            {% block footer %}
+                {% include 'partials/footer.html' %}
+            {% endblock footer %}
+        </div>
+        <!-- end main content-->
+{% endblock content %}
+
+{% block extra_js %}
+    <!-- Card Masonry -->
+    <script src="{% static 'libs/masonry-layout/dist/masonry.pkgd.min.js'%}"></script>
+{% endblock extra_js %}

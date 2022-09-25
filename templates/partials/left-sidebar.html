@@ -1,0 +1,154 @@
+{% load static %}
+{% block left_sidebar %}
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
+
+            <div data-simplebar class="h-100">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled" id="side-menu">
+
+                        <li>
+                            <a href="{% url 'dashboard' %}">
+                                <i data-feather="home"></i>
+                                <span data-key="t-dashboard">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'apps:email.inbox'%}">
+                                <i data-feather="mail"></i>
+                                <span data-key="t-email">Email</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <i data-feather="rss"></i>
+                                <span data-key="t-blog">Blog</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{% url 'pages:pages.create_blog'%}" key="t-task-list">Create</a></li>
+                                <li><a href="{% url 'pages:pages.blogs'%}" key="t-kanban-board">All Blogs</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <i data-feather="message-circle"></i>
+                                <span data-key="t-testimonials">Testimonials</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{% url 'pages:pages.create_testimonial'%}" key="t-task-list">Create</a></li>
+                                <li><a href="{% url 'pages:pages.testimonials'%}" key="t-kanban-board">All testimonials</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <i data-feather="layers"></i>
+                                <span data-key="t-draws">Draws</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{% url 'pages:pages.add_draw' %}" data-key="t-login">Add Draw</a></li>
+                                <li><a href="{% url 'pages:pages.all_draws' %}" data-key="t-register">All Draws</a></li>
+                                <li><a href="{% url 'pages:pages.add_win_draw' %}" data-key="t-login">Add Winning Numbers</a></li>
+                                <li><a href="{% url 'pages:pages.all_draws-form' %}" data-key="t-register">All Draws Form</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <i data-feather="users"></i>
+                                <span data-key="t-users">Users</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{% url 'pages:pages.all_users' %}" data-key="t-starter-page">All Customers</a></li>
+                                <li><a href="{% url 'pages:pages.all_forecasters' %}" data-key="t-maintenance">All Forecaster</a></li>
+                                <li><a href="{% url 'pages:pages.merchants' %}" data-key="t-coming-soon">Merchants</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <i data-feather="user"></i>
+                                <span data-key="t-accounts">Accounts</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{% url 'pages:pages.deposit_credit' %}" data-key="t-alerts">Deposit Credit</a></li>
+                                <li><a href="{% url 'pages:pages.local_withdrawals' %}" data-key="t-buttons">Local Withdrawals</a></li>
+                                <li><a href="{% url 'pages:pages.bank_withdrawals' %}" data-key="t-cards">Bank Withdrawals</a></li>
+                                <li><a href="{% url 'pages:pages.commissions' %}" data-key="t-carousel">Commissions</a></li>
+                                <li><a href="{% url 'pages:pages.latest_transactions' %}" data-key="t-dropdowns">Latest Transactions</a></li>
+                                <li><a href="{% url 'pages:pages.win_audits' %}" data-key="t-grid">Wins Audit</a></li>
+                                <li><a href="{% url 'pages:pages.win_audit_fail' %}" data-key="t-images">Wins Audit Fail</a></li>
+                                <li><a href="{% url 'pages:pages.all_subscriptions' %}" data-key="t-modals">All Subscriptions</a></li>
+                                <li><a href="{% url 'pages:pages.account_summary' %}" data-key="t-offcanvas">Account Summary</a></li>
+                                <li><a href="{% url 'pages:pages.account_services' %}" data-key="t-offcanvas">Account Services</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <i data-feather="dollar-sign"></i>
+                                <span data-key="t-merchant-stakes">Stakes</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{% url 'pages:pages.all_user_stakes' %}" data-key="t-range-slider">All User Stakes</a></li>
+                                <li><a href="{% url 'pages:pages.add_merchant_stake' %}" data-key="t-lightbox">Add Merchant Stake</a></li>
+                                <li><a href="{% url 'pages:pages.all_merchant_stake' %}" data-key="t-range-slider">All Merchant Stake</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <i data-feather="box"></i>
+                                <span data-key="t-merchant-stakes">Banker</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{% url 'pages:pages.bankers' %}" data-key="t-range-slider">Bankers</a></li>
+                                <li><a href="{% url 'pages:pages.add_banker' %}" data-key="t-lightbox">Add Banker</a></li>
+                                <li><a href="{% url 'pages:pages.banker_stats' %}" data-key="t-range-slider">Banker Stats</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <i data-feather="plus"></i>
+                                <span data-key="t-merchant-stakes">Add-ons</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{% url 'pages:pages.add_recent_stakes' %}" data-key="t-range-slider">Add Stakes</a></li>
+                                <li><a href="{% url 'pages:pages.add_recent_wins' %}" data-key="t-lightbox">Add Winners</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{% url 'pages:pages.number_verification' %}">
+                                <i data-feather="key"></i>
+                                <span data-key="t-number-verification">Number Verification</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i data-feather="file"></i>
+                                <span data-key="t-pages">Pages</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow">
+                                <i data-feather="user-plus"></i>
+                                <span data-key="t-merchant-stakes">Admins</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{% url 'pages:pages.user_view' %}" data-key="t-lightbox">Users</a></li>
+                                <li><a href="{% url 'pages:pages.add_user' %}" data-key="t-range-slider">Add User</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+{% endblock left_sidebar %}

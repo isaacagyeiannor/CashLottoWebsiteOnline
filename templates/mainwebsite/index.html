@@ -1,0 +1,475 @@
+
+{% extends "mainwebsite/base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Banner Section Starts Here -->
+    <section class="banner-section bg_img overflow-hidden" style="background:url({% static 'mainwebsite/images/banner/bg.png'%}) center">
+        <div class="container">
+            <div class="banner-wrapper d-flex flex-wrap align-items-center">
+                <div class="banner-content">
+                    <h1 class="banner-content__title">Play <span class="text--base">Online Lottery</span> & Win Money Unlimited</h1>
+                    <p class="banner-content__subtitle">PLAY NLA LOTTERY GAME AND WIN BIG. THE ULTIMATE ONLINE LOTTERY PLATFORM.</p>
+                    <div class="button-wrapper">
+                        <a href="{% url 'stakelottery' %}" class="cmn--btn active btn--lg"><i class="las la-play"></i> Stake Now</a>
+                        <a href="{% url 'signup' %}" class="cmn--btn btn--lg">Sign Up</a>
+                    </div>
+                    <img src="{% static 'mainwebsite/images/banner/lottonumber.png'%}" alt="" class="shape1">
+                </div>
+                <div class="banner-thumb">
+                    <img src="{% static 'mainwebsite/images/banner/cashlottologo.png'%}" alt="banner">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Section Ends Here -->
+ <!-- How Section Starts Here -->
+ <section class="how-section padding-top padding-bottom bg_img" style="background: url({% static 'mainwebsite/images/how/lottobg.jpg'%});">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section-header text-center">
+                    <h2 class="section-header__title">How to Play</h2>
+                    <p>Stake and win NLA Lottery in three simple steps</p>
+                </div>
+            </div>
+        </div>
+        <div class="row gy-4 justify-content-center">
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="how-item">
+                    <div class="how-item__thumb">
+                        <i class="las la-user-plus"></i>
+                        <div class="badge badge--lg badge--round radius-50">01</div>
+                    </div>
+                    <div class="how-item__content">
+                        <h4 class="title">Sign Up First & Login</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="how-item">
+                    <div class="how-item__thumb">
+                        <i class="las la-money-bill"></i>
+                        <div class="badge badge--lg badge--round radius-50">02</div>
+                    </div>
+                    <div class="how-item__content">
+                        <h4 class="title">Load Cash to your account</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="how-item">
+                    <div class="how-item__thumb">
+                        <i class="las la-dice"></i>
+                        <div class="badge badge--lg badge--round radius-50">03</div>
+                    </div>
+                    <div class="how-item__content">
+                        <h4 class="title">Choose Lottery Type & Play</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center">
+            <a href="{% url 'howtoplay' %}" class="cmn--btn active btn--md radius-0 text-center">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Game Section Starts Here -->
+    <section class="game-section padding-top padding-bottom bg_img" style="background: url({% static 'mainwebsite/images/game/lotteryball.jpg'%});">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="section-header text-center">
+                        <h2 class="section-header__title">NLA Lottery Games</h2>
+                        <p>Stake your favourite lottery; check the closing time and click play now to stake.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-4 justify-content-center">
+
+                <!--Play Game-->
+                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6">
+                    <div class="game-item">
+                        <div class="game-inner">
+                            <div class="game-item__thumb">
+                                <img src="{% static 'mainwebsite/images/game/lucky-tuesday.jpg'%}" alt="game">
+                            </div>
+                            <div class="game-item__content">
+                                <h4 class="title">Lucky Tuesday</h4>
+                                <p class="invest-info">Tues, 21st oct., 2022</p>
+                                <p class="invest-amount">Lottery Ends in: </p>
+                                <div class="container">
+                                    <div class="row">
+                                      <div class="col-3">
+                                        <p>00<br/>days</p>
+                                      </div>
+                                      <div class="col-3">
+                                        <p>00<br/>hrs</p>
+                                      </div>
+                                      <div class="col-3">
+                                        <p>00<br/>min</p>
+                                      </div>
+                                      <div class="col-3">
+                                        <p>00<br/>sec</p>
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                <a href="{% url 'gamedetails' %}" class="cmn--btn active btn--md radius-0">Play Now</a>
+                            </div>
+                        </div>
+                        <div class="ball"></div>
+                    </div>
+                </div>
+                <!--End Play Game-->
+            </div>
+        </div>
+    </section>
+    <!-- Game Section Ends Here -->
+
+
+    <!-- Why Choose Us Section Starts Here -->
+    <section class="why-section padding-top padding-bottom overflow-hidden">
+        <div class="container">
+            <div class="row justify-content-between gy-5">
+                <div class="col-lg-5 col-xl-4">
+                    <div class="section-header mb-4">
+                        <h2 class="section-header__title">Why Stake with Cash Lotto</h2>
+                        <p>TheCashLotto is a lottery intermediary service that purchases lottery tickets on behalf of its customers.</p>
+                    </div>
+                    <p>TheCashLotto is not affiliated with any lottery commission program or operator in Ghana, either directly or indirectly. We do not sell lottery tickets, and thecashlotto does not receive any commissions from lottery organizations in exchange for its services, nor do we share in the prizes.</p>
+                </div>
+                <div class="col-lg-7 col-xl-7">
+                    <div class="row gy-4 gy-md-5 gy-lg-4 gy-xl-5">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="why-item">
+                                <div class="why-item__thumb">
+                                    <i class="las la-shield-alt"></i>
+                                </div>
+                                <div class="why-item__content">
+                                    <h4 class="title">Secure Lottery Platform</h4>
+                                    <p>The Cash Lotto has one of the best and secured lottery platform you can stake your games at the comfort of your home .</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="why-item">
+                                <div class="why-item__thumb">
+                                    <i class="las la-bowling-ball"></i>
+                                </div>
+                                <div class="why-item__content">
+                                    <h4 class="title">Fast and Simple</h4>
+                                    <p>Quickly stake in very simple steps, easy registration, top ups at your finger tips with cash lotto .</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="why-item">
+                                <div class="why-item__thumb">
+                                    <i class="las la-trophy"></i>
+                                </div>
+                                <div class="why-item__content">
+                                    <h4 class="title">Higher Winning Chance</h4>
+                                    <p>With the help of our proforecasters, you have the chance of winning from their expert knowledge</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="why-item">
+                                <div class="why-item__thumb">
+                                    <i class="las la-coins"></i>
+                                </div>
+                                <div class="why-item__content">
+                                    <h4 class="title">Earn Referal commissions</h4>
+                                    <p>Send links to your friends by sharing your code with them and win amazing prizes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shapes">
+            <img src="{% static 'mainwebsite/images/why/shape.png'%}" alt="why" class="shape shape1">
+        </div>
+    </section>
+    <!-- Why Choose Us Section Ends Here -->
+
+    <!-- Top Investor & Winner Section Starts Here -->
+    <section class="top-section padding-top padding-bottom bg_img" style="background:url({% static 'mainwebsite/images/top/bg.png' %}) center">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-4">
+                    <h3 class="part-title mb-4">Latest Winner</h3>
+                    <div class="top-investor-slider">
+                        <div class="investor-item">
+                            <div class="investor-item__thumb">
+                                <img src="{% static 'mainwebsite/images/top/item1.png' %}" alt="top">
+                                <p class="amount">$150</p>
+                            </div>
+                            <div class="investor-item__content">
+                                <h6 class="name">Munna Ahmed</h6>
+                            </div>
+                        </div>
+                        <div class="investor-item">
+                            <div class="investor-item__thumb">
+                                <img src="{% static 'mainwebsite/images/top/item2.png'%}" alt="top">
+                                <p class="amount">$270</p>
+                            </div>
+                            <div class="investor-item__content">
+                                <h6 class="name">Fahad Bin</h6>
+                            </div>
+                        </div>
+                        <div class="investor-item">
+                            <div class="investor-item__thumb">
+                                <img src="{% static 'mainwebsite/images/top/item3.png'%}" alt="top">
+                                <p class="amount">$52000</p>
+                            </div>
+                            <div class="investor-item__content">
+                                <h6 class="name">Rafuj Raiha</h6>
+                            </div>
+                        </div>
+                        <div class="investor-item">
+                            <div class="investor-item__thumb">
+                                <img src="{% static 'mainwebsite/images/top/item1.png'%}" alt="top">
+                                <p class="amount">$150</p>
+                            </div>
+                            <div class="investor-item__content">
+                                <h6 class="name">Munna Ahmed</h6>
+                            </div>
+                        </div>
+                        <div class="investor-item">
+                            <div class="investor-item__thumb">
+                                <img src="{% static 'mainwebsite/images/top/item3.png'%}" alt="top">
+                                <p class="amount">$50</p>
+                            </div>
+                            <div class="investor-item__content">
+                                <h6 class="name">Rafuj Raihan</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="cla-wrapper text-center">
+                        <h3 class="title mb-4">PLAY !!! & <br> Win million Ghana Cedis</h3>
+                        <a href="#0" class="cmn--btn active btn--md radius-0">Play Now</a>
+                        <div class="thumb">
+                            <img src="{% static 'mainwebsite/images/top/bg2.png'%}" alt="top">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="part-title mb-4">Latest Stake</h3>
+                    <div class="top-investor-slider">
+                        <div class="investor-item">
+                            <div class="investor-item__thumb">
+                                <img src="{% static 'mainwebsite/images/top/item1.png'%}" alt="top">
+                                <p class="amount">$150</p>
+                            </div>
+                            <div class="investor-item__content">
+                                <h6 class="name">Munna Ahmed</h6>
+                            </div>
+                        </div>
+                        <div class="investor-item">
+                            <div class="investor-item__thumb">
+                                <img src="{% static 'mainwebsite/images/top/item2.png'%}" alt="top">
+                                <p class="amount">$270</p>
+                            </div>
+                            <div class="investor-item__content">
+                                <h6 class="name">Fahad Bin</h6>
+                            </div>
+                        </div>
+                        <div class="investor-item">
+                            <div class="investor-item__thumb">
+                                <img src="{% static 'mainwebsite/images/top/item3.png'%}" alt="top">
+                                <p class="amount">$52000</p>
+                            </div>
+                            <div class="investor-item__content">
+                                <h6 class="name">Rafuj Raiha</h6>
+                            </div>
+                        </div>
+                        <div class="investor-item">
+                            <div class="investor-item__thumb">
+                                <img src="{% static 'mainwebsite/images/top/item1.png'%}" alt="top">
+                                <p class="amount">$150</p>
+                            </div>
+                            <div class="investor-item__content">
+                                <h6 class="name">Munna Ahmed</h6>
+                            </div>
+                        </div>
+                        <div class="investor-item">
+                            <div class="investor-item__thumb">
+                                <img src="{% static 'mainwebsite/images/top/item3.png'%}" alt="top">
+                                <p class="amount">$50</p>
+                            </div>
+                            <div class="investor-item__content">
+                                <h6 class="name">Rafuj Raihan</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Top Investor & Winner Section Ends Here -->
+
+ <!-- Faq Section Starts Here -->
+ <section class="faq-section padding-top padding-bottom overflow-hidden">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-xl-6">
+                <div class="section-header text-center">
+                    <h2 class="section-header__title">Frequently Asked Questions</h2>
+                </div>
+            </div>
+        </div>
+        <div class="faq-wrapper row justify-content-between">
+            <div class="col-lg-6">
+                <div class="faq-item">
+                    <div class="faq-item__title">
+                        <h5 class="title">01. I am having problems logging into the website. </h5>
+                    </div>
+                    <div class="faq-item__content">
+                        <p>There are a couple of things you can check:</p>
+                        <ol>
+                        <li>Is your password correct? If you've forgotten your password, you can click on the "forgot password" option on the Login screen, enter your email address and date of birth. A reset password email will be sent to your registered email address and you can reset the password.</li>
+                        <li>Is your username correct? If you believe you are entering the correct username, or you have forgotten it altogether, contact Customer Support.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item__title">
+                        <h5 class="title">02. How can I check if I have winning numbers</h5>
+                    </div>
+                    <div class="faq-item__content">
+                        <p>Go to the results page, click on ‘Check my tickets’ and then select the game you want to check your numbers against. You can check your numbers against recent draws or all draws over the last 90 days.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item__title">
+                        <h5 class="title">03. I forgot my login details. What should I do?</h5>
+                    </div>
+                    <div class="faq-item__content">
+                        <p>If you've forgotten your password, you can click on the "forgot password" option on the Login screen, enter your email address and date of birth. A reset password email will be sent to your registered email address and you can reset the password. If you have forgotten your username, contact Customer Support.</p>
+                    </div>
+                </div>
+                <div class="faq-item mb-2 mb-lg-0">
+                    <div class="faq-item__title">
+                        <h5 class="title">04. How do I know when and how much I've won</h5>
+                    </div>
+                    <div class="faq-item__content">
+                        <p><i>For Draw Based Games</i></p> 
+                        <p>When you have finished playing a draw game, your ticket will be entered into the draw/s that you had selected for the ticket. If your ticket is a winner on the night of the draw, an email will be sent informing you to check your account. When you log into your account, a notification will be displayed informing you of your winnings. The game outcomes of games you have played online will also be available under ‘Tickets’.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="faq-item">
+                    <div class="faq-item__title">
+                        <h5 class="title">05. Can I see a list of all of the games I've played in the past?</h5>
+                    </div>
+                    <div class="faq-item__content">
+                        <p>You can see a list of all games played online over the past 30days. On web, simply log in to your account and select ‘My Account’ followed by ‘Tickets’. In the App, simply log in and select 'Tickets'.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item__title">
+                        <h5 class="title">06. How old do I have to be to register? </h5>
+                    </div>
+                    <div class="faq-item__content">
+                        <p>To register and play, you must be aged 18 years or older.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item__title">
+                        <h5 class="title">07. Do I have to add money to my wallet when I register?</h5>
+                    </div>
+                    <div class="faq-item__content">
+                        <p>No. However, in order to begin playing the games and to win prizes, you must add money to your wallet.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-item__title">
+                        <h5 class="title">08. How quickly can I play online after registering? </h5>
+                    </div>
+                    <div class="faq-item__content">
+                        <p>In order to begin playing the games and to win prizes, you must add money to your wallet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shapes">
+        <img src="{% static 'mainwebsite/images/faq/shape.png'%}" alt="faq" class="shape shape1">
+    </div>
+</section>
+<!-- Faq Section Ends Here -->
+    <!-- Testimonial Section Starts Here -->
+    <section class="testimonial-section padding-top padding-bottom overflow-hidden">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-xl-6">
+                    <div class="section-header text-center">
+                        <h2 class="section-header__title">What Cash Lotto Players Say</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slider">
+                <!--Single Testimonial Slide-->
+                <div class="single-slide">
+                    <div class="testimonial-item bg_img" style="background: url({% static 'mainwebsite/images/testimonial/bg.png'%}) center">
+                        <div class="testimonial-inner">
+                            <div class="testimonial-item__content">
+                                <div class="quote-icon"><i class="las la-quote-left"></i></div>
+                                <p>Ducimus ullam omnis eius unde ipsa minus excepturi pariatur! Vel sint cumque expedita  eveniet commodi asp voluptas recusandae voluptatem, accusantium in.</p>
+                            </div>
+                            <div class="thumb-wrapper">
+                                <div class="thumb">
+                                    <img src="{% static 'mainwebsite/images/top/item1.png'%}" alt="top">
+                                </div>
+                                <div class="content">
+                                    <h6 class="name">Suraiya Nesa</h6>
+                                    <span class="designation">Top Pocker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Single Testimonial Slide-->
+            </div>
+        </div>
+        <div class="shapes">
+            <img src="{% static 'mainwebsite/images/why/shape.png'%}" alt="why" class="shape shape1">
+        </div>
+    </section>
+    <!-- Testimonial Section Ends Here -->
+
+       <!-- About Section Starts Here -->
+       <section class="about-section padding-top padding-bottom overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-header">
+                            <h2 class="section-header__title">Stay Connected</h2>
+                            <p>Cash Lotto is a platform, available in both mobile and web that enables users to access the services of the Ghana National Lottery Authority through our online system. This makes it convenient and easily accessible to play all NLA games irrespective of location and time. </p>
+                        </div>
+                        <a href="{% url 'aboutus' %}" class="cmn--btn active">Download App</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="aobut-thumb section-thumb">
+                        <img src="{% static 'mainwebsite/images/about/thumb.png'%}" alt="about" class="ms-lg-5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shapes">
+            <img src="{% static 'mainwebsite/images/about/shape.png'%}" alt="about" class="shape shape1">
+        </div>
+    </section>
+    <!-- About Section Ends Here -->
+
+    {% endblock %}

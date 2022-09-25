@@ -1,0 +1,49 @@
+{% extends "mainwebsite/base/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <!-- inner hero section start -->
+<section class="inner-banner bg_img" style="background: url('assets/images/inner-banner/bg2.jpg') top;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        <h2 class="title text-white">Commission Log</h2>
+        <ul class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>Commission Log</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- inner hero section end -->
+
+
+    <!-- Game Log Section Starts Here -->
+    <div class="padding-top padding-bottom">
+        <div class="container">
+            <div class="table--responsive--lg">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Commission From</th>
+                            <th>Commission Level</th>
+                            <th>Amount</th>
+                            <th>Title</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Commission From">@testuser123</td>
+                            <td data-label="Commission Level">Level 3</td>
+                            <td data-label="Amount">$500</td>
+                            <td data-label="Title">about the referral commission</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Game Log Section Ends Here -->
+{% endblock %}
