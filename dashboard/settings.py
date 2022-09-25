@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-5&yr)&mo2t3y$9$vrjwj8-p%bu&7@oa*e1%qwi0$o5wac3rxcr"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1','64.227.14.35', 'thecashlotto.com', 'www.thecashlotto.com', 'localhost']
 
 
 # Application definition
@@ -122,12 +122,12 @@ WSGI_APPLICATION = "dashboard.wsgi.application"
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'cashlottodb',
-        # 'USER': 'karlowebsytz',
-        # 'PASSWORD': 'Skies109!',
-        # 'HOST': 'localhost',
-        # 'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'cashlottodb',
+        'USER': 'karlowebsytz',
+        'PASSWORD': 'Skies109!',
+        'HOST': 'localhost',
+        'PORT': '',
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
@@ -233,3 +233,5 @@ ACCOUNT_FORMS = {
     "change_password": "dashboard.forms.UserChangePasswordForm",
     "set_password": "dashboard.forms.UserSetPasswordForm",
 }
+
+#CSRF_TRUSTED_ORIGINS = ['http://thecashlotto.com', 'https://thecashlotto.com', '64.227.14.35']
