@@ -30,8 +30,8 @@ class Home(TemplateView):
 class AboutUs(TemplateView):
     template_name = 'mainwebsite/about.html'
 
-class Blog(TemplateView):
-    template_name = 'mainwebsite/blog.html'
+# class Blog(TemplateView):
+#     template_name = 'mainwebsite/blog.html'
     
 class ContactUs(TemplateView):
     template_name = 'mainwebsite/contact.html'
@@ -53,11 +53,11 @@ class HowToPlay(TemplateView):
 class StakeLottery(TemplateView):
     template_name = 'mainwebsite/games.html'
 
-class GameDetails(TemplateView):
-    template_name = 'mainwebsite/game-details.html'
+# class GameDetails(TemplateView):
+#     template_name = 'mainwebsite/game-details.html'
 
-class LotteryResults(TemplateView):
-    template_name = 'mainwebsite/results.html'
+# class LotteryResults(TemplateView):
+#     template_name = 'mainwebsite/results.html'
     
 class ForeCasters(TemplateView):
     template_name = 'mainwebsite/forecasters.html'
@@ -65,45 +65,45 @@ class ForeCasters(TemplateView):
     
 #AUTH
 
-class signinPage(TemplateView):
-    template_name = 'mainwebsite/sign-in.html'
+# class signinPage(TemplateView):
+#     template_name = 'mainwebsite/sign-in.html'
     
-class signupPage(TemplateView):
-    template_name = 'mainwebsite/sign-up.html'
+# class signupPage(TemplateView):
+#     template_name = 'mainwebsite/sign-up.html'
 
 #USER DASHBOARD
-class user_Dashboard(TemplateView):
-    template_name = 'mainwebsite/userdashboard.html'
+# class user_Dashboard(TemplateView):
+#     template_name = 'mainwebsite/userdashboard.html'
 
-class accountSetting(TemplateView):
-    template_name = 'mainwebsite/profile.html'
+# class accountSetting(TemplateView):
+#     template_name = 'mainwebsite/profile.html'
 
-class stakelog(TemplateView):
-    template_name = 'mainwebsite/stake-history.html'
+# class stakelog(TemplateView):
+#     template_name = 'mainwebsite/stake-history.html'
     
-class deposit(TemplateView):
-    template_name = 'mainwebsite/deposit-log.html'
+# class deposit(TemplateView):
+#     template_name = 'mainwebsite/deposit-log.html'
     
-class withdrawal(TemplateView):
-    template_name = 'mainwebsite/withdraw-log.html'
+# class withdrawal(TemplateView):
+#     template_name = 'mainwebsite/withdraw-log.html'
 
-class transaction(TemplateView):
-    template_name = 'mainwebsite/transaction.html'
+# class transaction(TemplateView):
+#     template_name = 'mainwebsite/transaction.html'
 
-class forecastersboard(TemplateView):
-    template_name = 'mainwebsite/forecasters-board.html'
+# class forecastersboard(TemplateView):
+#     template_name = 'mainwebsite/forecasters-board.html'
 
-class paymentslog(TemplateView):
-    template_name = 'mainwebsite/payments-log.html'
+# class paymentslog(TemplateView):
+#     template_name = 'mainwebsite/payments-log.html'
 
-class forecastersubscribers(TemplateView):
-    template_name = 'mainwebsite/subscribers-forecasters.html'
+# class forecastersubscribers(TemplateView):
+#     template_name = 'mainwebsite/subscribers-forecasters.html'
 
-class forecastersubscribed(TemplateView):
-    template_name = 'mainwebsite/subscribed-forecasters.html'
+# class forecastersubscribed(TemplateView):
+#     template_name = 'mainwebsite/subscribed-forecasters.html'
     
-class SubscribedForecasters(TemplateView):
-    template_name = 'mainwebsite/subscribed-forecasters.html' 
+# class SubscribedForecasters(TemplateView):
+#     template_name = 'mainwebsite/subscribed-forecasters.html' 
     
 class GameHistory(TemplateView):
     template_name = 'mainwebsite/lottery-history.html'
@@ -117,7 +117,7 @@ class AccountSetting(TemplateView):
 class Security(TemplateView):
     template_name = 'mainwebsite/change-pass.html'
     
-    
+#AUTH   
 @ unauthenticated_user 
 def signupPage(request):
 
@@ -145,3 +145,165 @@ def signupPage(request):
     else:
         form =MyUserCreationForm()
     return render(request, 'mainwebsite/sign-up.html', {'form': form})
+
+
+def account_activate(request, uidb64, token):
+    try:
+        uid = force_str(urlsafe_base64_decode(uidb64))
+        user = UserBase.objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, user.DoesNotExist):
+        user = None
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        login(request, user)
+        return redirect('userdashboard')
+    else:
+        return render(request, 'activation_invalid.html')
+    
+# User login page
+@ unauthenticated_user  
+def signinPage(request):
+    if request.method=='POST':
+        username =request.POST.get('username')
+        password =request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('userdashboard')
+        else:
+            messages.error(request, 'Username OR Password does not exit')    
+    context={}
+    return render(request, 'mainwebsite/sign-in.html', context)
+
+
+def logoutUser(request):
+    logout(request)
+    return redirect('signin')
+
+
+#USER DASHBOARD
+@login_required(login_url='signin') 
+# @allowed_users(allowed_roles=['admin','members'])
+def user_Dashboard(request):
+    context ={}
+    return render(request, 'mainwebsite/userdashboard.html', context)
+
+@login_required(login_url='signin') 
+# @allowed_users(allowed_roles=['members'])
+def accountSetting(request):
+    userprofile=request.user.userprofile
+    form=UserProfileForm(instance=userprofile)
+    if request.method=='POST':
+        form=UserProfileForm(request.POST,request.FILES,instance=userprofile)
+        if form.is_valid():
+            form.save() 
+    context ={'form':form}
+    return render(request, 'mainwebsite/profile.html', context)
+
+@login_required(login_url='signin') 
+# @allowed_users(allowed_roles=['admin','members'])
+def stakelog(request):
+    Stakehistory =Stake.objects.all()
+    context ={'Stakehistory':Stakehistory}
+    return render(request, 'mainwebsite/stake-history.html', context)
+
+
+@login_required(login_url='signin') 
+# @allowed_users(allowed_roles=['admin','members'])
+def deposit(request):
+    context ={}
+    return render(request, 'mainwebsite/deposit-log.html', context)
+
+@login_required(login_url='signin') 
+# @allowed_users(allowed_roles=['admin','members'])
+def withdrawal(request):
+    context ={}
+    return render(request, 'mainwebsite/withdraw-log.html', context)
+
+@login_required(login_url='signin') 
+# @allowed_users(allowed_roles=['admin','members'])
+def transaction(request):
+    context ={}
+    return render(request, 'mainwebsite/transaction.html', context)
+
+@login_required(login_url='signin') 
+# @allowed_users(allowed_roles=['admin','members'])
+def forecastersboard(request):
+    prediction=ForecasterPrediction.objects.all()
+    
+    form=ForecasterPredictForm()
+    if request.method=='POST':
+        form=ForecasterPredictForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save() 
+    
+    context ={'form':form,
+              'prediction':prediction,
+              }
+    return render(request, 'mainwebsite/forecasters-board.html', context)
+
+@login_required(login_url='payments-log') 
+# @allowed_users(allowed_roles=['admin','members'])
+def paymentslog(request):
+    context ={}
+    return render(request, 'mainwebsite/payments-log.html', context)
+
+@login_required(login_url='payments-log') 
+# @allowed_users(allowed_roles=['admin','members'])
+def forecastersubscribers(request):
+    context ={}
+    return render(request, 'mainwebsite/subscribers-forecasters.html', context)
+
+@login_required(login_url='payments-log') 
+# @allowed_users(allowed_roles=['admin','members'])
+def forecastersubscribed(request):
+    prediction=ForecasterPrediction.objects.all()
+    
+
+    context ={'prediction':prediction}
+    return render(request, 'mainwebsite/subscribed-forecasters.html', context)
+
+
+
+#Gameplay Page
+@login_required(login_url='signin') 
+# @allowed_users(allowed_roles=['admin','members'])
+def game_details(request):
+    
+    draw=AddDraw.objects.all()
+    
+    form=StakeForm()
+    if request.method =='POST':
+        form=StakeForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save() 
+            return redirect('stakehistory')
+            
+    context ={'form':form,'draw':draw}
+    return render(request, 'mainwebsite/game-details.html', context)
+
+
+@login_required(login_url='signin') 
+# @allowed_users(allowed_roles=['admin','members'])
+def stakelog(request):
+    Stakehistory =Stake.objects.all()
+    context ={'Stakehistory':Stakehistory}
+    return render(request, 'mainwebsite/stake-history.html', context)
+
+def lotteryResults(request):
+    Results=AddWinDraw.objects.all()
+    return render(request,'mainwebsite/results.html', {'Results':Results})
+
+#Blog
+def blog(request):
+    blogs=Blog.objects.all()
+    context ={'blogs':blogs}
+    return render(request, 'mainwebsite/blog.html', context)
+
+
+@login_required(login_url='signin') 
+def blogdetail(request,pk):
+    blog=get_object_or_404(Blog,id=pk)
+    context ={'blog':blog}
+    return render(request, 'mainwebsite/blog-details.html', context)
