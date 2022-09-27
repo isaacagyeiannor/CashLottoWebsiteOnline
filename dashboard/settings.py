@@ -128,8 +128,8 @@ DATABASES = {
         'PASSWORD': 'Skies109!',
         'HOST': 'localhost',
         'PORT': '',
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -204,12 +204,17 @@ DEFAULT_FROM_EMAIL = "Your email address"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 
-LOGIN_URL = "account_login"
-LOGIN_REDIRECT_URL = "/"
+# LOGIN_URL = "account_login"
+# LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+
+# Custom user model
+AUTH_USER_MODEL = 'mainwebsite.UserBase'
+LOGIN_REDIRECT_URL = '/userdashboard'
+LOGIN_URL = '/login/'
 
 
 SITE_ID = 2
@@ -234,4 +239,4 @@ ACCOUNT_FORMS = {
     "set_password": "dashboard.forms.UserSetPasswordForm",
 }
 
-#CSRF_TRUSTED_ORIGINS = ['http://thecashlotto.com', 'https://thecashlotto.com', '64.227.14.35']
+CSRF_TRUSTED_ORIGINS = ['http://thecashlotto.com', 'https://thecashlotto.com', '64.227.14.35']
