@@ -1,6 +1,26 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DetailView
+from django.shortcuts import render,get_object_or_404
+from django.http import Http404
+from django.urls import reverse
+from django.views.generic import TemplateView,ListView
+from django.contrib.auth.decorators import login_required
+from .decorators import admin_only, unauthenticated_user,allowed_users
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import *
+from .models import*
+from pages.models import *
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.contenttypes.models import ContentType
+from django.utils.decorators import method_decorator
+from django.views.generic import FormView
+from django.contrib.sites.shortcuts import get_current_site
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes, force_str
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 
+from .tokens import account_activation_token
 # Create your views here.
 #Home
 class Home(TemplateView):
@@ -96,3 +116,32 @@ class AccountSetting(TemplateView):
 
 class Security(TemplateView):
     template_name = 'mainwebsite/change-pass.html'
+    
+    
+@ unauthenticated_user 
+def signupPage(request):
+
+    # if request.user.is_authenticated:
+    #     return redirect('account:dashboard')
+
+    if request.method == 'POST':
+        form = MyUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.email =form.cleaned_data['email']
+            user.set_password(form.cleaned_data['password1'])
+            user.is_active = False
+            user.save()
+            current_site = get_current_site(request)
+            subject = 'Activate your Account'
+            message = render_to_string('account_activation_email.html', {
+                'user': user,
+                'domain': current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
+            })
+            user.email_user(subject=subject, message=message)
+            return HttpResponse('registered succesfully and activation sent')
+    else:
+        form =MyUserCreationForm()
+    return render(request, 'mainwebsite/sign-up.html', {'form': form})

@@ -30,6 +30,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','64.227.14.35', 'thecashlotto.com', 'www.thecashlotto.com', 'localhost']
 
+CKEDITOR_UPLOAD_PATH="uploads/"
 
 # Application definition
 
@@ -44,13 +45,15 @@ DEFAULT_APPS = [
 ]
 LOCAL_APPS = [
     "apps",
-    "mainwebsite",
+    "mainwebsite.apps.MainwebsiteConfig",
     "pages",
     
     #Installed Apps
     "ckeditor",
     'widget_tweaks',
     'bootstrap_datepicker_plus',
+    "ckeditor_uploader",
+    
     
 ]
 THIRD_PARTY_APPS = [

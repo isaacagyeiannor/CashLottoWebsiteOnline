@@ -22,11 +22,12 @@ urlpatterns = [
     
     #AUTH
     path('login/', views.signinPage.as_view(), name="signin"),
-    path('signup/', views.signupPage.as_view(), name="signup"),
+    # path('signup/', views.signupPage.as_view(), name="signup"),
     path('forecasters', views.ForeCasters.as_view(), name='forecasters'),
     path('change-password', views.Security.as_view(), name='changepassword'),
     path('game-log', views.GameHistory.as_view(), name='gamelog'),
     path('registerforecaster/', views.RegisterForecaster.as_view(), name="registerforecaster"),
+    path('signup/', views.signupPage, name="signup"),
     
     #USER DASHBOARD
     path('user-dashboard/', views.user_Dashboard.as_view(), name="userdashboard"),

@@ -1,14 +1,12 @@
-from dataclasses import field
 from django import forms
-from .models import *
-from mainwebsite.models import UserBase
+from .models import ForecasterPrediction, UserBase, UserProfile,Stake
 from django.contrib.auth.forms import UserCreationForm
+from pages.forms import *
+from pages.models import *
+from django.contrib.contenttypes.models import ContentType
 
-# from bootstrap_datepicker_plus import DatePickerInput
-from bootstrap_datepicker_plus.widgets import DatePickerInput
 
-# Sign Up Form
-class SignUpForm(UserCreationForm):
+class MyUserCreationForm(UserCreationForm):
     username = forms.CharField(
         label='Enter Username', min_length=4, max_length=50, help_text='Required')
     email = forms.EmailField(max_length=100, help_text='Required', error_messages={
@@ -39,48 +37,13 @@ class SignUpForm(UserCreationForm):
         if UserBase.objects.filter(email=email).exists():
             raise forms.ValidationError(
                 'Please use another Email, that is already taken')
-        return email 
-
-
-class BlogForm(forms.ModelForm):
-    class Meta:
-        model =Blog
-        fields ="__all__"
-        
-
-class BlogCommentsForm(forms.ModelForm):
-    class Meta:
-        model = BlogComment
-        fields = ['name', "email" ,'body']
-        
-class TestimonialForm(forms.ModelForm):
-    class Meta:
-        model =Testimonial
-        fields ="__all__"
+        return email   
         
         
-
-class AddDrawForm(forms.ModelForm):
+class UserProfileForm(forms.ModelForm):
+    bio=forms.CharField(widget=forms.Textarea(attrs={'id': "richtext_field"}))
     class Meta:
-        model = AddDraw
-        fields = ['draw_type', 'date_select', ]
-        widgets = {
-        'date_select':DatePickerInput()
-        }
+        model=UserProfile
+        fields= '__all__'  
+        exclude= ["user"]
         
-class AddWinDrawForm(forms.ModelForm):
-    class Meta:
-        model = AddWinDraw
-        fields = ['draw_type', 'date_select', 'first_number','second_number','third_number','fourth_number']
-        widgets = {
-        'date_select':DatePickerInput()
-        }
-        
-
-class AllDrawForm(forms.ModelForm):
-    class Meta:
-        model = AllDraw
-        fields = '__all__'
-        widgets = {
-        'date_select':DatePickerInput()
-        }
