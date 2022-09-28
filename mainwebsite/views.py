@@ -90,8 +90,8 @@ class ForeCasters(TemplateView):
 # class transaction(TemplateView):
 #     template_name = 'mainwebsite/transaction.html'
 
-# class forecastersboard(TemplateView):
-#     template_name = 'mainwebsite/forecasters-board.html'
+class forecastersboard(TemplateView):
+    template_name = 'mainwebsite/forecasters-board.html'
 
 # class paymentslog(TemplateView):
 #     template_name = 'mainwebsite/payments-log.html'
@@ -201,12 +201,14 @@ def accountSetting(request):
     context ={'form':form}
     return render(request, 'mainwebsite/profile.html', context)
 
+
 @login_required(login_url='signin') 
 # @allowed_users(allowed_roles=['admin','members'])
 def stakelog(request):
     Stakehistory =Stake.objects.all()
     context ={'Stakehistory':Stakehistory}
     return render(request, 'mainwebsite/stake-history.html', context)
+
 
 
 @login_required(login_url='signin') 
