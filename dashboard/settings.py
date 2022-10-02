@@ -39,7 +39,7 @@ if socket.gethostname() == "67.205.133.94 thecashlotto.com www.thecashlotto.com"
     
 else:
     DEBUG = True
-    ALLOWED_HOSTS = ["localhost", "127.0.0.1","67.205.133.94"]
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1","67.205.133.94", 'thecashlotto.com']
 
 CKEDITOR_UPLOAD_PATH="uploads/"
 
