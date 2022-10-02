@@ -47,3 +47,18 @@ class UserProfileForm(forms.ModelForm):
         fields= '__all__'  
         exclude= ["user"]
         
+# i'll add validation later
+class StakeForm(forms.ModelForm):
+    class Meta:
+        model=Stake
+        fields=['game_type','perm_type','first_number','second_number','third_number','fourth_number','fifth_number','payment','winning_amount','price']
+        
+
+class ForecasterPredictForm(forms.ModelForm):
+    class Meta:
+        model = ForecasterPrediction
+        fields = ['draw_type', 'date_select', 'first_number','second_number','third_number','fourth_number','fifth_number']
+        widgets = {
+        'date_select':DatePickerInput()
+        }
+        

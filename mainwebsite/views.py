@@ -7,13 +7,10 @@ from .decorators import admin_only, unauthenticated_user,allowed_users
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import *
+from .forms import ForecasterPredictForm,MyUserCreationForm,UserProfileForm,StakeForm
 from .models import*
 from pages.models import *
-from django.core.exceptions import ObjectDoesNotExist
-from django.contrib.contenttypes.models import ContentType
 from django.utils.decorators import method_decorator
-from django.views.generic import FormView
 from django.contrib.sites.shortcuts import get_current_site
 from django.http import HttpResponse
 from django.template.loader import render_to_string
@@ -90,8 +87,8 @@ class ForeCasters(TemplateView):
 # class transaction(TemplateView):
 #     template_name = 'mainwebsite/transaction.html'
 
-# class forecastersboard(TemplateView):
-#     template_name = 'mainwebsite/forecasters-board.html'
+class forecastersboard(TemplateView):
+    template_name = 'mainwebsite/forecasters-board.html'
 
 # class paymentslog(TemplateView):
 #     template_name = 'mainwebsite/payments-log.html'
@@ -201,12 +198,14 @@ def accountSetting(request):
     context ={'form':form}
     return render(request, 'mainwebsite/profile.html', context)
 
+
 @login_required(login_url='signin') 
 # @allowed_users(allowed_roles=['admin','members'])
 def stakelog(request):
     Stakehistory =Stake.objects.all()
     context ={'Stakehistory':Stakehistory}
     return render(request, 'mainwebsite/stake-history.html', context)
+
 
 
 @login_required(login_url='signin') 
