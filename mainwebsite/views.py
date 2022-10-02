@@ -7,13 +7,10 @@ from .decorators import admin_only, unauthenticated_user,allowed_users
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import *
+from .forms import ForecasterPredictForm,MyUserCreationForm,UserProfileForm,StakeForm
 from .models import*
 from pages.models import *
-from django.core.exceptions import ObjectDoesNotExist
-from django.contrib.contenttypes.models import ContentType
 from django.utils.decorators import method_decorator
-from django.views.generic import FormView
 from django.contrib.sites.shortcuts import get_current_site
 from django.http import HttpResponse
 from django.template.loader import render_to_string
