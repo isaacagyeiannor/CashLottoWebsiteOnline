@@ -33,13 +33,13 @@ SECRET_KEY = "django-insecure-5&yr)&mo2t3y$9$vrjwj8-p%bu&7@oa*e1%qwi0$o5wac3rxcr
 
 import socket
 
-if socket.gethostname() == "67.205.133.94 thecashlotto.com www.thecashlotto.com":
+if socket.gethostname() == "thecashlotto.com":
     DEBUG = False
-    ALLOWED_HOSTS = ["67.205.133.94", 'thecashlotto.com', 'www.thecashlotto.com']
+    ALLOWED_HOSTS = ["67.205.133.94", "thecashlotto.com", "www.thecashlotto.com"]
     
 else:
     DEBUG = True
-    ALLOWED_HOSTS = ["localhost", "127.0.0.1","67.205.133.94", 'thecashlotto.com']
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 CKEDITOR_UPLOAD_PATH="uploads/"
 
