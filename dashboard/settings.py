@@ -33,7 +33,7 @@ SECRET_KEY = "django-insecure-5&yr)&mo2t3y$9$vrjwj8-p%bu&7@oa*e1%qwi0$o5wac3rxcr
 
 import socket
 
-if socket.gethostname() == "thecashlotto.com":
+if socket.gethostname() == "cash-lotto-website":
     DEBUG = False
     ALLOWED_HOSTS = ["67.205.133.94", "thecashlotto.com", "www.thecashlotto.com"]
     
