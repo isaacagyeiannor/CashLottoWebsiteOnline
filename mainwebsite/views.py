@@ -139,7 +139,7 @@ def logoutUser(request):
 
 #USER DASHBOARD
 @login_required(login_url='signin') 
-@allowed_users(allowed_roles=['members'])
+# @allowed_users(allowed_roles=['members'])
 def user_Dashboard(request):
     context ={}
     return render(request, 'mainwebsite/userdashboard.html', context)
