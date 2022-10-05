@@ -142,8 +142,8 @@ DATABASES = {
         'PASSWORD': 'Skies109!',
         'HOST': 'localhost',
         'PORT': '',
-        # "ENGINE": "django.db.backends.sqlite3",
-        # "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -212,7 +212,7 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "tomciafriyie@gmail.com"
-EMAIL_HOST_PASSWORD = "0244986148"
+EMAIL_HOST_PASSWORD = "0148"
 DEFAULT_FROM_EMAIL = "tomciafriyie@gmail.com"
 
 
