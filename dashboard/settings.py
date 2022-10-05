@@ -211,11 +211,16 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "Your email address"
-EMAIL_HOST_PASSWORD = "Your Host Password"
-DEFAULT_FROM_EMAIL = "Your email address"
+EMAIL_HOST_USER = "tomciafriyie@gmail.com"
+EMAIL_HOST_PASSWORD = "0244986148"
+DEFAULT_FROM_EMAIL = "tomciafriyie@gmail.com"
+
+
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+# # Email setting
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # LOGIN_URL = "account_login"
@@ -227,8 +232,8 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
 # Custom user model
 AUTH_USER_MODEL = 'mainwebsite.UserBase'
-LOGIN_REDIRECT_URL = '/userdashboard'
-LOGIN_URL = '/login/'
+# LOGIN_REDIRECT_URL = '/'
+# LOGIN_URL = '/login/'
 
 
 SITE_ID = 2

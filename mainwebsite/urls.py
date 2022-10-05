@@ -37,23 +37,9 @@ urlpatterns = [
     path('activate/<slug:uidb64>/<slug:token>/', views.account_activate, name='activate'),
     
     
-    #USER DASHBOARD
-    # path('user-dashboard/', views.user_Dashboard.as_view(), name="userdashboard"),
-    # path('account-setting/', views.accountSetting.as_view(), name="accountsetting"),
-    # path('stake-history/', views.stakelog.as_view(), name="stakehistory"),
-    # path('deposit/', views.deposit.as_view(), name="deposit"),
-    # path('withdrawal/', views.withdrawal.as_view(), name="withdrawal"),
-    # path('transaction/', views.transaction.as_view(), name="transaction"),
-    # path('forecasters-board/', views.forecastersboard.as_view(), name="forecastersboard"),
-    # path('payments-log/', views.paymentslog.as_view(), name="paymentslog"),
-    # path('forecaster-subscribers/', views.forecastersubscribers.as_view(), name="forecastersubscribers"),
-    # path('suscribed-forecasters/', views.forecastersubscribed.as_view(), name="subscribedforecasters"),
-    
     path('change-password', views.Security.as_view(), name='changepassword'),
     path('game-log', views.GameHistory.as_view(), name='gamelog'),
     
-    
-    # path('registerforecaster/', views.RegisterForecaster.as_view(), name="registerforecaster"),
     
     #USER DASHBOARD
     path('user-dashboard/', views.user_Dashboard, name="userdashboard"),
