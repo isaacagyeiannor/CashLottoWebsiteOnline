@@ -143,8 +143,8 @@ DATABASES = {
         'PASSWORD': 'Skies109!',
         'HOST': 'localhost',
         'PORT': '',
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -221,7 +221,7 @@ DEFAULT_FROM_EMAIL = "thecashlotto@gmail.com"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # Email setting
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # LOGIN_URL = "account_login"
