@@ -36,10 +36,20 @@ import socket
 if socket.gethostname() == "cash-lotto-website":
     DEBUG = False
     ALLOWED_HOSTS = ["67.205.133.94", "thecashlotto.com", "www.thecashlotto.com"]
+    # SMTP Configure
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_HOST = "smtp.gmail.com"
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = "thecashlotto@gmail.com"
+    EMAIL_HOST_PASSWORD = "cashlotto109!"
+    DEFAULT_FROM_EMAIL = "thecashlotto@gmail.com"
     
 else:
     DEBUG = True
     ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+    # Email setting
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 CKEDITOR_UPLOAD_PATH="uploads/"
 
@@ -88,7 +98,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    # "django.middleware.csrf.CsrfViewMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -143,8 +153,8 @@ DATABASES = {
         'PASSWORD': 'Skies109!',
         'HOST': 'localhost',
         'PORT': '',
-        # "ENGINE": "django.db.backends.sqlite3",
-        # "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -207,21 +217,13 @@ MESSAGE_TAGS = {
 }
 
 
-# SMTP Configure
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "thecashlotto@gmail.com"
-EMAIL_HOST_PASSWORD = "cashlotto109!"
-DEFAULT_FROM_EMAIL = "thecashlotto@gmail.com"
+
 
 
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-# Email setting
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 
 # LOGIN_URL = "account_login"
