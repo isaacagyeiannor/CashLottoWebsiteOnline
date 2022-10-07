@@ -1,9 +1,14 @@
 from django.urls import path
 from . import views
+from django.contrib.auth import views as auth_views
+from .forms import PwdResetForm,PwdResetConfirmForm
+
+# app_name= 'mainwebsite'
 
 urlpatterns = [
     #Home
-    path('', views.Home.as_view(), name='home'),
+    path(r'', views.Home.as_view(), name='home'),
+    # path('', views.homePage, name="home"),
     #Blog
     # path('blog/', views.Blog.as_view(), name='blogs'),
     path('blogs/', views.blog, name="blogs"),
@@ -35,6 +40,17 @@ urlpatterns = [
     path('logout/', views.logoutUser, name="logout"),
     path('signup/', views.signupPage, name="signup"),
     path('activate/<slug:uidb64>/<slug:token>/', views.account_activate, name='activate'),
+     #Password reset
+    path('reset_password/', auth_views.PasswordResetView.as_view(template_name='mainwebsite/password_reset.html',
+                                                                success_url='password_reset_email_confirm',
+                                                                email_template_name='mainwebsite/password_reset_email.html',
+                                                                form_class=PwdResetForm),name='password-reset'),
+    path('reset_password/password_reset_email_confirm', auth_views.PasswordResetDoneView.as_view(template_name='mainwebsite/password_reset_complete.html'),name='password_reset_done'),
+    path('password_reset_confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='mainwebsite/password_reset_confirm.html',
+                                                                                                success_url='/password_reset_complete/', 
+                                                                                                form_class=PwdResetConfirmForm),name='password_reset_confirm'),
+    path('password_reset_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='mainwebsite/password_reset_complete.html'),name='password_reset_complete'),
+    
     
     
     path('change-password', views.Security.as_view(), name='changepassword'),
@@ -52,8 +68,5 @@ urlpatterns = [
     path('payments-log/', views.paymentslog, name="paymentslog"),
     path('forecaster-subscribers/', views.forecastersubscribers, name="forecastersubscribers"),
     path('suscribed-forecasters/', views.forecastersubscribed, name="subscribedforecasters"),
-    
-   
-    
     
 ]

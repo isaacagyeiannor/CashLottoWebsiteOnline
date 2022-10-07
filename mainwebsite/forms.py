@@ -1,8 +1,11 @@
+import email
 from django import forms
 from .models import ForecasterPrediction, UserBase, UserProfile,Stake
 from django.contrib.auth.forms import UserCreationForm
 from pages.forms import *
 from pages.models import *
+from django.contrib.auth.forms import (PasswordResetForm,
+                                       SetPasswordForm)
 from django.contrib.contenttypes.models import ContentType
 
 
@@ -42,10 +45,53 @@ class MyUserCreationForm(UserCreationForm):
         
 class UserProfileForm(forms.ModelForm):
     bio=forms.CharField(widget=forms.Textarea(attrs={'id': "richtext_field"}))
+    
+    email = forms.EmailField(
+        label='Account email (can not be changed)', max_length=200, widget=forms.TextInput(
+            attrs={'class': 'form-control mb-3', 'placeholder': 'email', 'id': 'form-email', 'readonly': 'readonly'}))
+
+
     class Meta:
         model=UserProfile
         fields= '__all__'  
         exclude= ["user"]
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].required = True
+        self.fields['email'].required = True
+
+
+class PwdResetForm(PasswordResetForm):
+    
+    email = forms.EmailField(max_length=254, widget=forms.TextInput(
+        attrs={'class': 'form-control mb-3', 'placeholder': 'Email', 'id': 'form-email'}))
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        email_ver = UserBase.objects.filter(email=email)
+        if not email_ver:
+            raise forms.ValidationError(
+                'Unfortunatley we can not find that email address')
+        return email
+    
+    class Meta:
+        model=UserBase
+        fields =[ 'email']
+    
+class PwdResetConfirmForm(SetPasswordForm):
+    new_password1 = forms.CharField(
+        label='New password', widget=forms.PasswordInput(
+            attrs={'class': 'form-control mb-3', 'placeholder': 'New Password', 'id': 'form-newpass'}))
+    new_password2 = forms.CharField(
+        label='Repeat password', widget=forms.PasswordInput(
+            attrs={'class': 'form-control mb-3', 'placeholder': 'New Password', 'id': 'form-new-pass2'}))
+    
+    
+    # class Meta:
+    #     model=UserBase
+    #     fields =[ 'email', 'password1', 'password2']
+
         
 # i'll add validation later
 class StakeForm(forms.ModelForm):

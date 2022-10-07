@@ -15,7 +15,7 @@ def less_than(value):
 class BlogTestmonaials(models.Model):
     title = models.CharField(max_length=50,default="") 
     content =RichTextUploadingField(blank=True,null=True,default="")
-    image = models.ImageField(upload_to='media\pages', max_length=30, null=True,default="media/pages/avatar.png")
+    image = models.ImageField(upload_to='mediafiles/', max_length=30, null=True,default="mediafiles/avatar.png")
     slug = models.SlugField(unique=True ,blank=True,default="")
     author = models.CharField(max_length=50,default="")  
     class Meta:

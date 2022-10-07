@@ -23,6 +23,11 @@ from .tokens import account_activation_token
 class Home(TemplateView):
     template_name = 'mainwebsite/index.html'
     
+# def homePage(request):
+    
+#     return render(request,'mainwebsite/index.html')
+
+    
 #Static Pages
 class AboutUs(TemplateView):
     template_name = 'mainwebsite/about.html'
@@ -152,7 +157,8 @@ def accountSetting(request):
     if request.method=='POST':
         form=UserProfileForm(request.POST,request.FILES,instance=userprofile)
         if form.is_valid():
-            form.save() 
+            form.save()
+        
     context ={'form':form}
     return render(request, 'mainwebsite/profile.html', context)
 

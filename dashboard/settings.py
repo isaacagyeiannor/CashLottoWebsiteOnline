@@ -59,6 +59,7 @@ LOCAL_APPS = [
     "mainwebsite.apps.MainwebsiteConfig",
     "pages",
     
+    
     #Installed Apps
     "ckeditor",
     'widget_tweaks',
@@ -211,16 +212,16 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "tomciafriyie@gmail.com"
-EMAIL_HOST_PASSWORD = "0148"
-DEFAULT_FROM_EMAIL = "tomciafriyie@gmail.com"
+EMAIL_HOST_USER = "thecashlotto@gmail.com"
+EMAIL_HOST_PASSWORD = "cashlotto109!"
+DEFAULT_FROM_EMAIL = "thecashlotto@gmail.com"
 
 
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-# # Email setting
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Email setting
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # LOGIN_URL = "account_login"
