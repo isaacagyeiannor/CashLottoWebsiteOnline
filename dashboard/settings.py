@@ -26,7 +26,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-5&yr)&mo2t3y$9$vrjwj8-p%bu&7@oa*e1%qwi0$o5wac3rxcr"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
+DEBUG = True
+
+if DEBUG:
+    # Email setting
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    # SMTP Configure
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_HOST = "smtp.gmail.com"
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = "thecashlotto@gmail.com"
+    EMAIL_HOST_PASSWORD = "cashlotto109!"
+    DEFAULT_FROM_EMAIL = "thecashlotto@gmail.com"
 
 #ALLOWED_HOSTS = ['127.0.0.1','67.205.133.94', 'thecashlotto.com', 'www.thecashlotto.com', 'localhost']
 
@@ -35,11 +48,12 @@ import socket
 
 if socket.gethostname() == "cash-lotto-website":
     DEBUG = False
-    ALLOWED_HOSTS = ["67.205.133.94", "thecashlotto.com", "www.thecashlotto.com"]
-    
+    ALLOWED_HOSTS = ["67.205.133.94", "thecashlotto.com", "www.thecashlotto.com"]   
 else:
     DEBUG = True
     ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+    
+    
 
 CKEDITOR_UPLOAD_PATH="uploads/"
 
@@ -58,6 +72,7 @@ LOCAL_APPS = [
     "apps",
     "mainwebsite.apps.MainwebsiteConfig",
     "pages",
+    
     
     #Installed Apps
     "ckeditor",
@@ -121,12 +136,12 @@ TEMPLATES = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin, regardless of `allauth`
-    "django.contrib.auth.backends.ModelBackend",
-    # `allauth` specific authentication methods, such as login by e-mail
-    "allauth.account.auth_backends.AuthenticationBackend",
-]
+# AUTHENTICATION_BACKENDS = [
+#     # Needed to login by username in Django admin, regardless of `allauth`
+#     "django.contrib.auth.backends.ModelBackend",
+#     # `allauth` specific authentication methods, such as login by e-mail
+#     "allauth.account.auth_backends.AuthenticationBackend",
+# ]
 
 WSGI_APPLICATION = "dashboard.wsgi.application"
 
@@ -206,16 +221,13 @@ MESSAGE_TAGS = {
 }
 
 
-# SMTP Configure
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "Your email address"
-EMAIL_HOST_PASSWORD = "Your Host Password"
-DEFAULT_FROM_EMAIL = "Your email address"
+
+
+
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+
 
 
 # LOGIN_URL = "account_login"
@@ -227,8 +239,8 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
 # Custom user model
 AUTH_USER_MODEL = 'mainwebsite.UserBase'
-LOGIN_REDIRECT_URL = '/userdashboard'
-LOGIN_URL = '/login/'
+# LOGIN_REDIRECT_URL = '/'
+# LOGIN_URL = '/login/'
 
 
 SITE_ID = 2

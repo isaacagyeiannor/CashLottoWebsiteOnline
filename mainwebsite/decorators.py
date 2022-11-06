@@ -22,7 +22,7 @@ def allowed_users(allowed_roles=[]):
             if group in allowed_roles:
                 return view_func(request,*args,**kwargs)
             else:
-                return redirect('userdashboard')
+                return redirect('/')
         return wrapper
     return decorator
 
