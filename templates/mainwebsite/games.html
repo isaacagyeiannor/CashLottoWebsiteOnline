@@ -22,6 +22,14 @@
     <!-- Game Section Starts Here -->
     <section class="game-section padding-top padding-bottom bg_img" style="background: url({% static 'mainwebsite/images/game/bg3.jpg'%});">
         <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-xl-5">
+                <div class="section-header text-center">
+                    <h2 class="section-header__title">NLA Lottery Games</h2>
+                    <p>Stake your favourite lottery; check the closing time and click play now to stake.</p>
+                </div>
+            </div>
+        </div>
             <div class="row gy-4 justify-content-center">
                 <!--Play Game-->
                 <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6">
@@ -61,6 +69,65 @@
                 <!--End Play Game-->
             </div>
         </div>
+        
     </section>
+    <!-- Game Section Starts Here -->
+    <section class="game-section padding-top padding-bottom bg_img" style="background: url({% static 'mainwebsite/images/game/lotteryball.jpg'%});">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-6 col-xl-5">
+                  <div class="section-header text-center">
+                      <h2 class="section-header__title">Other Cash Lotto Games</h2>
+                      <p>Stake your favourite lottery; check the closing time and click play now to stake.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="row gy-4 justify-content-center">
+
+              <!--Play Game-->
+              <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6">
+                  <div class="game-item">
+                      <div class="game-inner">
+                          <div class="game-item__thumb">
+                              <img src="{% static 'mainwebsite/images/game/lottery-icon.png'%}" alt="game">
+                          </div>
+                          <div class="game-item__content">
+                              <h4 class="title">Lucky Tuesday</h4>
+                              <p class="invest-info">Tues, 21st oct., 2022</p>
+                              <p class="invest-amount">Lottery Ends in: </p>
+                              <div class="container">
+                                  <div class="row">
+                                    <div class="col-3">
+                                      <p>00<br/>days</p>
+                                    </div>
+                                    <div class="col-3">
+                                      <p>00<br/>hrs</p>
+                                    </div>
+                                    <div class="col-3">
+                                      <p>00<br/>min</p>
+                                    </div>
+                                    <div class="col-3">
+                                      <p>00<br/>sec</p>
+                                    </div>
+                                  </div>
+                                  
+                                </div>
+                                
+                              <a href="{% url 'gamedetails' %}" class="cmn--btn active btn--md radius-0">Play Now</a>
+                          </div>
+
+                      </div>
+
+                      <div class="ball"></div>
+
+                  </div>
+              </div>
+              <!--End Play Game-->
+
+              
+          </div>
+      </div>
+  </section>
+  <!-- Game Section Ends Here -->
     <!-- Game Section Ends Here -->  
     {% endblock %}
