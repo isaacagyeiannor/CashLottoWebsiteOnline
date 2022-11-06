@@ -1,10 +1,10 @@
-{% extends "mainwebsite/mainwebsite/base/base.html" %}
+{% extends "mainwebsite/base/base.html" %}
 
 {% load static %}
 
 {% block content %}
     <!-- inner hero section start -->
-<section class="inner-banner bg_img" style="background: url('{% static 'mainwebsite/images/inner-banner/bg2.jpg'%}) top;">
+<section class="inner-banner bg_img" style="background: url({% static 'mainwebsite/images/inner-banner/bg2.jpg'%}) top;">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-7 col-xl-6 text-center">
@@ -47,8 +47,8 @@
                             <tbody>
                                 {% for stakehist in Stakehistory%}
                                 <tr>
-                                    <td class="trx-id" data-label="Transection ID">{{stakehist.date_stake}}, {{stakehist.date_stake|timesince}} ago</td>
-                                    <td class="trx-type" data-label="Transection Type">{{stakehist.game_type}}</td>
+                                    <td class="trx-id" data-label="Transaction ID">{{stakehist.date_stake}}, {{stakehist.date_stake|timesince}} ago</td>
+                                    <td class="trx-type" data-label="Transaction Type">{{stakehist.game_type}}</td>
                                     <td class="date" data-label="Date">{{stakehist.first_number}}-{{stakehist.second_number}}-{{stakehist.third_number}}- {{stakehist.fourth_number}}- {{stakehist.fifth_number}}</td>
                                     <td class="date" data-label="Date">{{stakehist.price}}</td>
                                     <td class="date" data-label="Date">{{stakehist.winning_amount}}</td>

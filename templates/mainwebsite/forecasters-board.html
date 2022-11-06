@@ -7,7 +7,7 @@
 <!-- inner hero section start -->
 <section
   class="inner-banner bg_img"
-  style="background: url('{% static 'mainwebsite/images/inner-banner/bg2.jpg'%}) top;"
+  style="background: url({% static 'mainwebsite/images/inner-banner/bg2.jpg'%}) top;"
 >
   <div class="container">
     <div class="row justify-content-center">
@@ -152,10 +152,10 @@
             <tbody>
               {% for predict in prediction %}
               <tr>
-                <td class="trx-id" data-label="Transection ID">
+                <td class="trx-id" data-label="Transaction ID">
                   {{predict.date_select}}, {{predict.date_created|timesince}} ago
                 </td>
-                <td class="trx-type" data-label="Transection Type">
+                <td class="trx-type" data-label="Transaction Type">
                   {{predict.draw_type}}
                 </td>
                 <td class="date" data-label="Date"> {{predict.first_number}}-{{predict.second_number}}-{{predict.third_number}}- {{predict.fourth_number}}- {{predict.fifth_number}}</td>
