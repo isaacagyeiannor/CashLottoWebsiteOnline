@@ -23,6 +23,11 @@ from .tokens import account_activation_token
 class Home(TemplateView):
     template_name = 'mainwebsite/index.html'
     
+# def homePage(request):
+    
+#     return render(request,'mainwebsite/index.html')
+
+    
 #Static Pages
 class AboutUs(TemplateView):
     template_name = 'mainwebsite/about.html'
@@ -50,57 +55,15 @@ class HowToPlay(TemplateView):
 class StakeLottery(TemplateView):
     template_name = 'mainwebsite/games.html'
 
-# class GameDetails(TemplateView):
-#     template_name = 'mainwebsite/game-details.html'
-
-# class LotteryResults(TemplateView):
-#     template_name = 'mainwebsite/results.html'
     
 class ForeCasters(TemplateView):
     template_name = 'mainwebsite/forecasters.html'
     
     
-#AUTH
-
-# class signinPage(TemplateView):
-#     template_name = 'mainwebsite/sign-in.html'
-    
-# class signupPage(TemplateView):
-#     template_name = 'mainwebsite/sign-up.html'
-
-#USER DASHBOARD
-# class user_Dashboard(TemplateView):
-#     template_name = 'mainwebsite/userdashboard.html'
-
-# class accountSetting(TemplateView):
-#     template_name = 'mainwebsite/profile.html'
-
-# class stakelog(TemplateView):
-#     template_name = 'mainwebsite/stake-history.html'
-    
-# class deposit(TemplateView):
-#     template_name = 'mainwebsite/deposit-log.html'
-    
-# class withdrawal(TemplateView):
-#     template_name = 'mainwebsite/withdraw-log.html'
-
-# class transaction(TemplateView):
-#     template_name = 'mainwebsite/transaction.html'
 
 class forecastersboard(TemplateView):
     template_name = 'mainwebsite/forecasters-board.html'
-
-# class paymentslog(TemplateView):
-#     template_name = 'mainwebsite/payments-log.html'
-
-# class forecastersubscribers(TemplateView):
-#     template_name = 'mainwebsite/subscribers-forecasters.html'
-
-# class forecastersubscribed(TemplateView):
-#     template_name = 'mainwebsite/subscribed-forecasters.html'
-    
-# class SubscribedForecasters(TemplateView):
-#     template_name = 'mainwebsite/subscribed-forecasters.html' 
+ 
     
 class GameHistory(TemplateView):
     template_name = 'mainwebsite/lottery-history.html'
@@ -131,7 +94,7 @@ def signupPage(request):
             user.save()
             current_site = get_current_site(request)
             subject = 'Activate your Account'
-            message = render_to_string('account_activation_email.html', {
+            message = render_to_string('mainwebsite/account_activation_email.html', {
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
@@ -156,7 +119,7 @@ def account_activate(request, uidb64, token):
         login(request, user)
         return redirect('userdashboard')
     else:
-        return render(request, 'activation_invalid.html')
+        return render(request, 'mainwebsite/activation_invalid.html')
     
 # User login page
 @ unauthenticated_user  
@@ -181,7 +144,7 @@ def logoutUser(request):
 
 #USER DASHBOARD
 @login_required(login_url='signin') 
-# @allowed_users(allowed_roles=['admin','members'])
+@allowed_users(allowed_roles=['members'])
 def user_Dashboard(request):
     context ={}
     return render(request, 'mainwebsite/userdashboard.html', context)
@@ -194,7 +157,8 @@ def accountSetting(request):
     if request.method=='POST':
         form=UserProfileForm(request.POST,request.FILES,instance=userprofile)
         if form.is_valid():
-            form.save() 
+            form.save()
+        
     context ={'form':form}
     return render(request, 'mainwebsite/profile.html', context)
 

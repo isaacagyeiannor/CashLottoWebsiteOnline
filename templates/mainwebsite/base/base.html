@@ -32,7 +32,84 @@
                     </div>
                   </div>
             </div>
-    
+        {% if request.user.is_authenticated %}
+        <div class="header">
+            <div class="container">
+                <div class="header-bottom">
+                    <div class="header-bottom-area align-items-center">
+                        <div class="logo"><a href="/"><img src="{% static 'mainwebsite/images/cashlottoletterlogo.png'%}" alt="logo"></a></div>
+                        <ul class="menu">
+                            <li>
+                                <a href="{% url 'home'%}">Home</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'stakelottery'%}">Lottery <span class="badge badge--sm badge--base text-dark">stake here</span></a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="{% url 'stakelottery'%}">Stake</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'forecasters'%}">Forecasters</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'lotteryresults'%}">Results</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{% url 'blogs'%}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#0">About</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="{% url 'aboutus'%}">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'contactus'%}">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{% url 'logout' %}">Logout</a>
+                                {% comment %} <ul class="sub-menu">
+                                    <li>
+                                        <a href="{% url 'signin' %}">Sign In</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'signup' %}">Sign Up</a>
+                                    </li>
+                                </ul> {% endcomment %}
+                            </li>
+                            <li>
+                                <a href="#0">Account</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="{% url 'userdashboard' %}">User Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'faq' %}">Faq</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'privacypolicy' %}">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'termsandconditions' %}">Terms & Conditions</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <button class="btn-close btn-close-white d-lg-none"></button>
+                        </ul>
+                        <div class="header-trigger-wrapper d-flex d-lg-none align-items-center">
+                            <div class="header-trigger me-4">
+                                <span></span>
+                            </div>
+                            <a href="signin/" class="cmn--btn active btn--md d-none d-sm-block">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
         <div class="header">
         <div class="container">
             <div class="header-bottom">
@@ -109,6 +186,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
         {% block content %}
         {% endblock %}

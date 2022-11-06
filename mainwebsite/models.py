@@ -39,7 +39,7 @@ class UserProfile(models.Model):
     country=models.CharField(max_length=200, null=True,blank=True)
     phone_number=models.CharField(max_length=14, null=True,blank=True)
     code=models.CharField(max_length=10, null=True,blank=True)
-    avatar = models.ImageField(null=True, blank=True,default="avatar.svg")
+    avatar = models.ImageField(null=True, blank=True,default="mediaflies/avatar.png")
     date_created=models.DateTimeField(auto_now_add=True, blank=True)  
     
     def __str__(self):
