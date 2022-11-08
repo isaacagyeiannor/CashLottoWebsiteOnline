@@ -150,6 +150,13 @@ def user_Dashboard(request):
     return render(request, 'mainwebsite/userdashboard.html', context)
 
 @login_required(login_url='signin') 
+# @allowed_users(allowed_roles=['admin','members'])
+def notifications(request):
+    context ={}
+    return render(request, 'mainwebsite/notifications.html', context)
+
+
+@login_required(login_url='signin') 
 # @allowed_users(allowed_roles=['members'])
 def accountSetting(request):
     userprofile=request.user.userprofile
