@@ -26,8 +26,8 @@
                   <div class="game-details-left"> 
                           <div class="col">
                             <ul>
-                             <li> <img src="{% static 'mainwebsite/images/game/lottery-balls/lottery-ball-1.png' %}" alt="game" "></li>
-                              <li><img src="{% static 'mainwebsite/images/game/lottery-balls/lottery-ball-2.png' %}" alt="game" width="36px" height="36px"></li>
+                              <img src="{% static 'mainwebsite/images/game/lottery-balls/lottery-ball-1.png' %}" alt="game" width="36px" height="36px">
+                              <img src="{% static 'mainwebsite/images/game/lottery-balls/lottery-ball-2.png' %}" alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/lottery-ball-3.png' %}" alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-4.png' %}" alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-5.png' %}" alt="game" width="36px" height="36px">
@@ -152,6 +152,8 @@
                           <option>Perm 3</option>
                       </select> {% endcomment %}
                     </div>
+
+                    {% if form.perm_type == 'Perm 2'  %}
                     <div class="form-group mt-2 mt-sm-5 justify-content-center d-flex flex-wrap justify-content-between">
                       {% comment %} <form novalidate="novalidate" action="" method='POST'>{%csrf_token%} {% endcomment %}
                         <div class="row">
@@ -182,6 +184,10 @@
                         {% comment %} <button type="Submit" class="cmn--btn active w-100 text-center">Stake</button> {% endcomment %}
                       {% comment %} </form> {% endcomment %}
                     </div>
+                    {% else %}
+                    Error
+                    {% endif %}
+
                     <div class="mt-5 text-center">
                       {% comment %} <input type='Submit' value='Stake' class="cmn--btn active w-100 btn--round"> {% endcomment %}
                       <button type="Submit" class="cmn--btn active w-100 text-center">Stake</button>
@@ -257,11 +263,11 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content section-bg border-0">
                 <div class="modal-header modal--header bg--base">
-                    <h4 class="modal-title text-dark" id="exampleModalLongTitle">Game Rules</h4>
+                    <h4 class="modal-title text-dark" id="exampleModalLongTitle">Lottery Rules</h4>
                 </div>
                 <div class="modal-body modal--body">
-                    <h3 class="title mb-2">Before Game Start: </h3>
-                    <p>Officia quod velit eaque tempore assumenda, blanditiis corporis praesentium voluptate provident. Sunt enim obcaecati odio doloremque molestiae aspernatur fuga eveniet molestias autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ipsam sapiente aut est nostrum, labore quibusdam aliquid repellendus dignissimos consequuntur aspernatur voluptates consectetur aliquam quam nesciunt impedit? Vitae blanditiis vero officiis quidem ipsum esse! Praesentium, laudantium numquam! Corporis sed adipisci, incidunt aut, accusamus sit, nihil tenetur ipsam quaerat optio nisi?</p>
+                    <h3 class="title mb-2">How to play Lottery: </h3>
+                    <p>Players select at least one out of ninety balls numbered 1-90. A draw is held at the end of each day except Sundays to randomly select 5 out of the 90 balls. If the numbers on the 5 selected balls match any of the numbers selected by the player at the time of play, then he is a winner. The daily draw games are Monday Special, Lucky Tuesday, Midweek, Fortune Thursday, Friday Bonanza and National Weekly on Saturdays</p>
                 </div>
                 <div class="modal-footer modal--footer">
                     <button type="button" class="btn btn--danger btn--md" data-bs-dismiss="modal">Close</button>
