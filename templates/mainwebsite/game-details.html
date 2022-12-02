@@ -25,9 +25,9 @@
               <div class="col-lg-6">
                   <div class="game-details-left"> 
                           <div class="col">
-                            <ul>
-                              <img src="{% static 'mainwebsite/images/game/lottery-balls/lottery-ball-1.png' %}" alt="game" width="36px" height="36px">
-                              <img src="{% static 'mainwebsite/images/game/lottery-balls/lottery-ball-2.png' %}" alt="game" width="36px" height="36px">
+                            <ul id="lottery_balls">
+                              <img src="{% static 'mainwebsite/images/game/lottery-balls/lottery-ball-1.png' %}"  alt="game" width="36px" height="36px">
+                              <img src="{% static 'mainwebsite/images/game/lottery-balls/lottery-ball-2.png' %}"  alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/lottery-ball-3.png' %}" alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-4.png' %}" alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-5.png' %}" alt="game" width="36px" height="36px">
@@ -56,7 +56,6 @@
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-28.png' %}" alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-29.png' %}" alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-30.png' %}" alt="game" width="36px" height="36px">
-                              <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-31.png' %}" alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-31.png' %}" alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-32.png' %}" alt="game" width="36px" height="36px">
                               <img src="{% static 'mainwebsite/images/game/lottery-balls/Lottery-Balls-33.png' %}" alt="game" width="36px" height="36px">
@@ -140,11 +139,11 @@
                           {% render_field form.price id="" class="form-control form--control amount-field" placeholder="Enter amount" %}
                           <span class="input-group-text text-white bg--base" id="basic-addon2">GH₵</span>
                       </div>
-                      <small class="form-text text-muted"><i class="fas fa-info-circle mr-2"></i>Minimum: GH₵ 1 | <span class="text-warning">Win Amount:  GH₵ 200 </span></small>
+                      <small class="form-text text-muted"><span class="text-warning"><i class="fas fa-info-circle mr-2"></i>Minimum Win: GH₵ 1 | Win Amount:  GH₵ 200 |<i class="fas fa-money-bill mr-2"></i> Price: GH₵ 1 </span></small>
                     </div>
                     <div class="form-group mt-4 mt-sm-4">
                       <div for="game-type" class="input-pre-icon"><i class="las la-angle-double-down"></i></div>
-                      {% render_field form.perm_type class="form-select form--control style--two" id="" placeholder=" "%}
+                      {% render_field form.perm_type class="form-select form--control style--two" id="lottery_type" placeholder=" "%}
                       {% comment %} <select class="form-select form--control style--two">
                           <option>2 Direct</option>
                           <option>3 Direct</option>
@@ -153,30 +152,26 @@
                       </select> {% endcomment %}
                     </div>
 
-                    {% if form.perm_type == 'Perm 2'  %}
+                    
                     <div class="form-group mt-2 mt-sm-5 justify-content-center d-flex flex-wrap justify-content-between">
-                      {% comment %} <form novalidate="novalidate" action="" method='POST'>{%csrf_token%} {% endcomment %}
-                        <div class="row">
-                          <div class="col">
-                            {% comment %} <input type="number" name='first_number' class="form-control" placeholder="First number">  {% endcomment %}
-                            {% render_field form.first_number class="form-control" id="" placeholder="First number"%}
+                        <div class="row" id="lottery_boxes">
+                          <div class="col" id="first_number">
+                            {% render_field form.first_number class="form-control" id="first_box" value="" placeholder="First number"%}
                             {{form.first_number.errors}}
                           </div>
-                          <div class="col">
-                            {% comment %} <input type="number" name='second_number' class="form-control" placeholder="Second number">  {% endcomment %}
+                          <div class="col" id="second_number">
                             {% render_field form.second_number id="" class="form-control" placeholder="Second number" %} 
                             {{form.second_number.errors}}
                           </div>
-                          <div class="col">
-                            {% comment %} <input type="number" name='third_number'   class="form-control" placeholder="Third number">  {% endcomment %}
+                          <div class="col" id="third_number">
                             {% render_field form.third_number id="" class="form-control" placeholder="Third number"   %} 
                             {{form.third_number.errors}}
                           </div>
-                          <div class="col">
+                          <div class="col"  id="fourth_number">
                             {% render_field form.fourth_number id="" class="form-control" placeholder="Fourth number" %} 
                             {{form.fourth_number.errors}}
                           </div>
-                          <div class="col">
+                          <div class="col" id="fifth_number">
                             {% render_field form.fifth_number id="" class="form-control" placeholder="Fifth number" %}
                             {{form.fifth_number.errors}} 
                           </div>
@@ -184,9 +179,7 @@
                         {% comment %} <button type="Submit" class="cmn--btn active w-100 text-center">Stake</button> {% endcomment %}
                       {% comment %} </form> {% endcomment %}
                     </div>
-                    {% else %}
-                    Error
-                    {% endif %}
+                    
 
                     <div class="mt-5 text-center">
                       {% comment %} <input type='Submit' value='Stake' class="cmn--btn active w-100 btn--round"> {% endcomment %}
