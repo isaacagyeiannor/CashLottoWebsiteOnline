@@ -1,3 +1,31 @@
-h1 {
-    color: red;
+/* Lottery Balls */
+#lottery_balls li {
+    display: inline-block;
+    
+}
+
+#lottery_balls li img{
+   width: 50px;
+   height: 50px;
+    
+}
+
+#lottery_boxes {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: 10px;
+ }
+
+#selected_numbers li {
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    background-color: #FFC827;
+    padding: 10px 10px 10px 10px;
+    margin: 10px;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
 }
