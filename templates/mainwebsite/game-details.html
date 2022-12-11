@@ -132,19 +132,12 @@
                       <button type="button" class="btn btn-secondary">30</button>
                       <button type="button" class="btn btn-secondary">04</button>
                       <button type="button" class="btn btn-secondary">56</button>
-                    </div>
+                    </div><hr>
 
 
-                    
-                    <div class="form-group ">
-                      <div class="input-group mb-3">
-                          {% comment %} <input type="text" name="price" class="form-control form--control amount-field" placeholder="Enter amount">  {% endcomment %}
-                          {% render_field form.price id="" class="form-control form--control amount-field" placeholder="Enter amount" %}
-                          <span class="input-group-text text-white bg--base" id="basic-addon2">GH₵</span>
-                      </div>
-                      <small class="form-text text-muted"><span class="text-warning"><i class="fas fa-info-circle mr-2"></i> Lines: 1 | <i class="fa fa-trophy mr-2"></i> Min Win:  GH₵ 200 |<i class="fas fa-money-bill mr-2"></i> Price: GH₵ 1 </span></small>
-                    </div>
+                    <h4>Select lottery type (inser in python)</h4>
                     <div class="form-group mt-4 mt-sm-4">
+                      
                       <div for="game-type" class="input-pre-icon"><i class="las la-angle-double-down"></i></div>
                       {% render_field form.perm_type class="form-select form--control style--two" id="lottery_type" placeholder=" "%}
                       {% comment %} <select class="form-select form--control style--two">
@@ -153,6 +146,14 @@
                           <option>Perm 2</option>
                           <option>Perm 3</option>
                       </select> {% endcomment %}
+                    </div> <br>
+                    <div class="form-group ">
+                      <div class="input-group mb-3">
+                          {% comment %} <input type="text" name="price" class="form-control form--control amount-field" placeholder="Enter amount">  {% endcomment %}
+                          {% render_field form.price id="" class="form-control form--control amount-field" placeholder="Enter amount" %}
+                          <span class="input-group-text text-white bg--base" id="basic-addon2">GH₵</span>
+                      </div>
+                      <small class="form-text text-muted"><span class="text-warning"><i class="fas fa-info-circle mr-2"></i> Lines: 1 | <i class="fa fa-trophy mr-2"></i> Min Win:  GH₵ 200 |<i class="fas fa-money-bill mr-2"></i> Price: GH₵ 1 </span></small>
                     </div>
 
                     
